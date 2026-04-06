@@ -33,6 +33,8 @@ export default function MissionSection() {
       style={{
         position: "relative",
         overflow: "hidden",
+        aspectRatio: "1280 / 463",
+        minHeight: 400,
       }}
     >
       {/* Background image - fills container */}
@@ -46,19 +48,24 @@ export default function MissionSection() {
         }}
       />
 
-      {/* Content - drives the section height */}
+      {/* Content overlay */}
       <div
         ref={ref}
         style={{
-          position: "relative",
+          position: "absolute",
+          inset: 0,
           zIndex: 1,
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: "clamp(40px, 6vw, 80px) 24px",
-          width: "100%",
-          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
+        <div style={{
+          maxWidth: 1100,
+          width: "100%",
+          padding: "0 24px",
+          textAlign: "center",
+        }}>
         {/* Heading */}
         <h2
           style={{
@@ -126,6 +133,7 @@ export default function MissionSection() {
           >
             私たちの信念
           </a>
+        </div>
         </div>
       </div>
     </section>

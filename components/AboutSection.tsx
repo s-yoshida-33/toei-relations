@@ -24,7 +24,8 @@ export default function AboutSection() {
       <div ref={ref} style={{
         position: "relative",
         width: "100%",
-        minHeight: "clamp(400px, 56.25vw, 720px)",
+        aspectRatio: "1280 / 720",
+        minHeight: 400,
       }}>
         {/* Background image - fills container */}
         <Image
@@ -37,13 +38,13 @@ export default function AboutSection() {
 
         {/* Overlay content - positioned at bottom */}
         <div style={{
-          position: "relative",
+          position: "absolute",
+          inset: 0,
           zIndex: 1,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-end",
-          minHeight: "clamp(400px, 56.25vw, 720px)",
           padding: "0 24px 5%",
         }}>
           {/* Description text */}
