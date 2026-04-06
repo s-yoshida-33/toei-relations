@@ -47,6 +47,7 @@ export default function Footer() {
               alt="TOEI RELATIONS"
               width={153}
               height={108}
+              className="footer-logo-img"
               style={{ width: "clamp(80px, 11.95vw, 153px)", height: "auto" }}
             />
           </div>
@@ -97,6 +98,9 @@ export default function Footer() {
           }
           .footer-nav a {
             font-size: 11px !important;
+          }
+          .footer-logo-img {
+            width: 56px !important;
           }
         }
       `}</style>
