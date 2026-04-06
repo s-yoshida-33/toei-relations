@@ -52,10 +52,11 @@ export default function MissionSection() {
         style={{
           position: "relative",
           zIndex: 1,
-          maxWidth: 1000,
+          maxWidth: 1100,
           margin: "0 auto",
           padding: "clamp(40px, 6vw, 80px) 24px",
           width: "100%",
+          textAlign: "center",
         }}
       >
         {/* Heading */}
