@@ -120,7 +120,7 @@ export default function ServiceSection() {
         </div>
 
         {/* Detail button - 17px, right-aligned, pill */}
-        <div style={{
+        <div className="btn-align-right" style={{
           textAlign: "right",
           opacity: inView ? 1 : 0,
           transition: "opacity 0.7s ease 0.5s",

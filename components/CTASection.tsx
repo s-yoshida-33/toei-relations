@@ -68,7 +68,7 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
-          {/* CONTACT - white bg → #003E84 bg, white text on hover */}
+          {/* CONTACT - outlined white, fills white on hover */}
           <a
             href="#"
             className="btn-cta-contact"
@@ -77,14 +77,14 @@ export default function CTASection() {
               alignItems: "center",
               gap: 8,
               padding: "16px 48px",
-              color: "#003E84",
+              color: "#FFFFFF",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(18px, 2.5vw, 32px)",
               fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,
-              border: "2px solid white",
+              border: "2px solid rgba(255,255,255,0.6)",
               minWidth: 200,
               justifyContent: "center",
             }}

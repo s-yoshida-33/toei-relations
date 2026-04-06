@@ -72,6 +72,7 @@ export default function HeroSection() {
 
           {/* CTA Buttons - 1.5x size */}
           <div
+            className="fv-btn-wrap"
             style={{
               display: "flex",
               gap: 20,
@@ -152,6 +153,9 @@ export default function HeroSection() {
           .fv-btn {
             padding: 14px 32px;
             font-size: 13px;
+          }
+          .fv-btn-wrap {
+            justify-content: center !important;
           }
         }
         @keyframes scrollLine {

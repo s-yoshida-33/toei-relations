@@ -107,8 +107,8 @@ export default function MissionSection() {
             ))}
           </div>
 
-          {/* CTA - 17px, right-aligned */}
-          <div style={{
+          {/* CTA - 17px, right-aligned on PC, center on SP */}
+          <div className="btn-align-right" style={{
             textAlign: "right",
             opacity: inView ? 1 : 0,
             transform: inView ? "translateY(0)" : "translateY(15px)",

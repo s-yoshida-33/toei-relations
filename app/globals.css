@@ -33,6 +33,13 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
 
+/* SP: center pill buttons */
+@media (max-width: 768px) {
+  .btn-align-right {
+    text-align: center !important;
+  }
+}
+
 /* ===== Button hover: right-to-left background sweep via background-position ===== */
 
 /* Navy bg → White bg, text inverts */
@@ -81,16 +88,16 @@ body {
   background-position: left center !important;
 }
 
-/* CTA: white bg → #003E84 bg, text inverts */
+/* CTA: outlined white → white bg fill, text inverts */
 .btn-cta-contact {
-  background: linear-gradient(to right, #003E84 50%, white 50%) !important;
+  background: linear-gradient(to right, white 50%, transparent 50%) !important;
   background-size: 200% 100% !important;
   background-position: right center !important;
   transition: background-position 0.4s ease, color 0.4s ease !important;
 }
 .btn-cta-contact:hover {
   background-position: left center !important;
-  color: white !important;
+  color: #003E84 !important;
 }
 
 /* CTA: outlined → white bg, text inverts */
