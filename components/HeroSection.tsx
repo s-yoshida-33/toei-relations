@@ -83,15 +83,14 @@ export default function HeroSection() {
           >
             <a
               href="#contact"
-              className="btn-navy"
+              className="btn-navy fv-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                padding: "20px 48px",
+                justifyContent: "center",
                 color: "white",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 19,
                 fontWeight: 500,
                 letterSpacing: "0.1em",
                 borderRadius: 2,
@@ -102,15 +101,14 @@ export default function HeroSection() {
             </a>
             <a
               href="#recruit"
-              className="btn-navy-outline"
+              className="btn-navy-outline fv-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                padding: "20px 48px",
+                justifyContent: "center",
                 color: "var(--color-navy)",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 19,
                 fontWeight: 500,
                 letterSpacing: "0.1em",
                 borderRadius: 2,
@@ -146,6 +144,16 @@ export default function HeroSection() {
       </div>
 
       <style>{`
+        .fv-btn {
+          padding: 20px 48px;
+          font-size: 19px;
+        }
+        @media (max-width: 768px) {
+          .fv-btn {
+            padding: 14px 32px;
+            font-size: 13px;
+          }
+        }
         @keyframes scrollLine {
           0% { transform: scaleY(0); transform-origin: top; }
           50% { transform: scaleY(1); transform-origin: top; }

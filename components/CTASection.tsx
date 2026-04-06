@@ -85,6 +85,8 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid white",
+              minWidth: 200,
+              justifyContent: "center",
             }}
           >
             CONTACT
@@ -106,6 +108,8 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid rgba(255,255,255,0.6)",
+              minWidth: 200,
+              justifyContent: "center",
             }}
           >
             RECRUIT
