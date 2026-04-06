@@ -24,28 +24,26 @@ export default function AboutSection() {
       <div ref={ref} style={{
         position: "relative",
         width: "100%",
-        overflow: "hidden",
+        minHeight: "clamp(400px, 56.25vw, 720px)",
       }}>
-        {/* Background image - 100% width, natural aspect ratio, horizontal layout */}
-        <div style={{ position: "relative", width: "100%" }}>
-          <Image
-            src="/images/about-bg.png"
-            alt="About us"
-            width={1280}
-            height={720}
-            style={{ width: "100%", height: "auto", display: "block" }}
-            priority
-          />
-        </div>
+        {/* Background image - fills container */}
+        <Image
+          src="/images/about-bg.png"
+          alt="About us"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
 
-        {/* Overlay content - positioned at bottom of image */}
+        {/* Overlay content - positioned at bottom */}
         <div style={{
-          position: "absolute",
-          inset: 0,
+          position: "relative",
+          zIndex: 1,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-end",
+          minHeight: "clamp(400px, 56.25vw, 720px)",
           padding: "0 24px 5%",
         }}>
           {/* Description text */}
