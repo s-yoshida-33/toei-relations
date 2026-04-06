@@ -68,9 +68,10 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
-          {/* CONTACT - 32px at 1280px, white bg, #003E84 text */}
+          {/* CONTACT - 32px, white bg, #003E84 text, pill hover animation */}
           <a
             href="#"
+            className="cta-btn-contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -85,22 +86,17 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid white",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.85)";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "white";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              position: "relative",
+              overflow: "hidden",
+              zIndex: 1,
             }}
           >
             CONTACT
           </a>
-          {/* RECRUIT - 32px at 1280px, outlined, #FFFFFF text */}
+          {/* RECRUIT - 32px, outlined, #FFFFFF text, pill hover animation */}
           <a
             href="#"
+            className="cta-btn-recruit"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -115,23 +111,55 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid rgba(255,255,255,0.6)",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-              (e.currentTarget as HTMLElement).style.borderColor = "white";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.6)";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              position: "relative",
+              overflow: "hidden",
+              zIndex: 1,
             }}
           >
             RECRUIT
           </a>
         </div>
       </div>
+
+      <style>{`
+        .cta-btn-contact::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.15);
+          transform: translateX(100%);
+          transition: transform 0.4s ease;
+          z-index: -1;
+        }
+        .cta-btn-contact:hover::before {
+          transform: translateX(0);
+        }
+        .cta-btn-contact:hover {
+          transform: translateY(-2px);
+        }
+        .cta-btn-contact {
+          transition: transform 0.2s ease;
+        }
+        .cta-btn-recruit::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.15);
+          transform: translateX(100%);
+          transition: transform 0.4s ease;
+          z-index: -1;
+        }
+        .cta-btn-recruit:hover::before {
+          transform: translateX(0);
+        }
+        .cta-btn-recruit:hover {
+          border-color: white !important;
+          transform: translateY(-2px);
+        }
+        .cta-btn-recruit {
+          transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+      `}</style>
     </section>
   );
 }

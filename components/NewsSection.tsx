@@ -38,7 +38,7 @@ export default function NewsSection() {
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(18px, 1.875vw, 24px)",
-            letterSpacing: "0.25em",
+            letterSpacing: "0.1em",
             color: "#000000",
             fontWeight: 700,
             marginBottom: 4,

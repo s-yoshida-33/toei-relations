@@ -95,9 +95,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright - #4D6C88 */}
+        {/* Copyright - #4D6C88, no border */}
         <div style={{
-          borderTop: "1px solid var(--color-border)",
           paddingTop: 20,
           textAlign: "center",
         }}>

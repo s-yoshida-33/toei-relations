@@ -37,20 +37,21 @@ export default function HeroSection() {
             transition: "opacity 0.9s ease, transform 0.9s ease",
           }}
         >
-          {/* Main heading - 96px at 1280px */}
-          <h1 style={{
+          {/* Main heading - 96px at 1280px, with 76px spacing between lines */}
+          <div style={{
             fontFamily: "'M PLUS 1p', sans-serif",
             fontSize: "clamp(36px, 7.5vw, 96px)",
             fontWeight: 700,
-            lineHeight: 1.15,
             color: "#4D6C88",
-            marginBottom: 24,
             letterSpacing: "-0.01em",
           }}>
-            Creating new
-            <br />
-            possibilities.
-          </h1>
+            <span style={{ display: "block" }}>Creating new</span>
+            <span style={{ display: "block", height: "clamp(30px, 5.94vw, 76px)" }} />
+            <span style={{ display: "block" }}>possibilities.</span>
+          </div>
+
+          {/* 76px spacing before subtitle */}
+          <div style={{ height: "clamp(30px, 5.94vw, 76px)" }} />
 
           {/* Sub text - 38px at 1280px */}
           <p
@@ -85,7 +86,6 @@ export default function HeroSection() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 10,
                 padding: "14px 32px",
                 background: "var(--color-navy)",
                 color: "white",
@@ -107,16 +107,12 @@ export default function HeroSection() {
               }}
             >
               CONTACT
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
             </a>
             <a
               href="#recruit"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 10,
                 padding: "14px 32px",
                 background: "transparent",
                 color: "var(--color-navy)",

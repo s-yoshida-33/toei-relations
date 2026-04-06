@@ -35,31 +35,14 @@ export default function MissionSection() {
         overflow: "hidden",
       }}
     >
-      {/* Background image - no overlay/blur */}
+      {/* Background image - full width, no crop */}
       <Image
         src="/images/mission-bg.png"
         alt=""
         fill
         style={{ objectFit: "cover", objectPosition: "center" }}
+        sizes="100vw"
       />
-
-      {/* Background MISSION text */}
-      <div style={{
-        position: "absolute",
-        left: -20,
-        top: "50%",
-        transform: "translateY(-50%) rotate(-90deg)",
-        transformOrigin: "center",
-        fontSize: 120,
-        fontWeight: 900,
-        letterSpacing: "0.05em",
-        color: "rgba(255,255,255,0.05)",
-        userSelect: "none",
-        whiteSpace: "nowrap",
-        fontFamily: "'Inter', sans-serif",
-      }}>
-        MISSION
-      </div>
 
       <div
         ref={ref}
@@ -130,7 +113,7 @@ export default function MissionSection() {
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(13px, 1.33vw, 17px)",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               textDecoration: "none",
               fontWeight: 500,
               borderRadius: 9999,

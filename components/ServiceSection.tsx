@@ -19,7 +19,7 @@ function useInView(threshold = 0.1) {
 const services = [
   { title: "人材派遣サービス", icon: "/images/services/dispatch.svg" },
   { title: "人材紹介サービス", icon: "/images/services/recruit.svg" },
-  { title: "業務請負\n（アウトソーシング）", icon: "/images/services/outsource.svg" },
+  { title: "業務請負(アウトソーシング)", icon: "/images/services/outsource.svg" },
   { title: "キャリア支援・研修", icon: "/images/services/career.svg" },
 ];
 
@@ -41,7 +41,7 @@ export default function ServiceSection() {
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(18px, 1.875vw, 24px)",
-            letterSpacing: "0.25em",
+            letterSpacing: "0.1em",
             color: "#000000",
             fontWeight: 700,
             marginBottom: 4,
@@ -60,7 +60,7 @@ export default function ServiceSection() {
           </h2>
         </div>
 
-        {/* Service items - no card, just image + text */}
+        {/* Service items - images aligned at bottom, single line text */}
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
@@ -72,17 +72,22 @@ export default function ServiceSection() {
               key={i}
               style={{
                 textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(30px)",
                 transition: `opacity 0.7s ease ${0.1 + i * 0.1}s, transform 0.7s ease ${0.1 + i * 0.1}s`,
               }}
             >
-              {/* Icon - 190x214 at 1280px */}
+              {/* Icon container - fixed height to align bottoms */}
               <div style={{
-                margin: "0 auto 16px",
+                width: "100%",
+                height: "clamp(140px, 16.72vw, 214px)",
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-end",
                 justifyContent: "center",
+                marginBottom: 16,
               }}>
                 <Image
                   src={service.icon}
@@ -92,10 +97,13 @@ export default function ServiceSection() {
                   style={{
                     width: "clamp(120px, 14.84vw, 190px)",
                     height: "auto",
+                    maxHeight: "100%",
+                    objectFit: "contain",
+                    objectPosition: "bottom",
                   }}
                 />
               </div>
-              {/* Title - 16px at 1280px, #000000 */}
+              {/* Title - 16px at 1280px, #000000, single line */}
               <h3 style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "clamp(12px, 1.25vw, 16px)",
@@ -103,7 +111,7 @@ export default function ServiceSection() {
                 color: "#000000",
                 letterSpacing: "0.05em",
                 lineHeight: 1.6,
-                whiteSpace: "pre-line",
+                whiteSpace: "nowrap",
               }}>
                 {service.title}
               </h3>
@@ -129,7 +137,7 @@ export default function ServiceSection() {
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(13px, 1.33vw, 17px)",
-              letterSpacing: "0.12em",
+              letterSpacing: "0.1em",
               textDecoration: "none",
               fontWeight: 700,
               borderRadius: 9999,
@@ -148,11 +156,6 @@ export default function ServiceSection() {
         @media (max-width: 768px) {
           .service-grid {
             grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .service-grid {
-            grid-template-columns: 1fr !important;
           }
         }
         .pill-btn-service::before {

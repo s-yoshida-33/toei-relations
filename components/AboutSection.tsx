@@ -26,7 +26,7 @@ export default function AboutSection() {
         width: "100%",
         overflow: "hidden",
       }}>
-        {/* Background image - 100% height of image */}
+        {/* Background image - 100% natural height */}
         <div style={{ position: "relative", width: "100%" }}>
           <Image
             src="/images/about-bg.png"
@@ -38,7 +38,7 @@ export default function AboutSection() {
           />
         </div>
 
-        {/* Overlay content - no dark blur */}
+        {/* Overlay content - no dark blur, no "about us" text */}
         <div style={{
           position: "absolute",
           inset: 0,
@@ -48,25 +48,6 @@ export default function AboutSection() {
           justifyContent: "center",
           padding: "0 24px",
         }}>
-          {/* Bordered title */}
-          <div style={{
-            border: "1.5px solid rgba(255,255,255,0.7)",
-            padding: "20px 60px",
-            display: "inline-block",
-            marginBottom: 40,
-          }}>
-            <h2 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(36px, 6vw, 72px)",
-              fontWeight: 400,
-              color: "white",
-              letterSpacing: "0.05em",
-              fontStyle: "italic",
-            }}>
-              about us
-            </h2>
-          </div>
-
           {/* Description text - 16px at 1280px, color #FFFFFF */}
           <div style={{
             maxWidth: 700,
