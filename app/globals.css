@@ -34,7 +34,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
 
 /* SP: center pill buttons */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .btn-align-right {
     text-align: center !important;
   }

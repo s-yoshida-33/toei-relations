@@ -183,11 +183,11 @@ export default function Header() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
         }
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
           .mobile-overlay { display: none !important; }
         }
       `}</style>

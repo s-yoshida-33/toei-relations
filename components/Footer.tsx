@@ -88,13 +88,12 @@ export default function Footer() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .footer-main {
             gap: 20px !important;
           }
           .footer-nav {
             gap: 10px 16px !important;
-            font-size: 11px !important;
           }
           .footer-nav a {
             font-size: 11px !important;

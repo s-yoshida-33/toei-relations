@@ -149,7 +149,7 @@ export default function HeroSection() {
           padding: 20px 48px;
           font-size: 19px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .fv-btn {
             padding: 14px 32px;
             font-size: 13px;
