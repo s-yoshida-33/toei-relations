@@ -83,12 +83,11 @@ export default function HeroSection() {
           >
             <a
               href="#contact"
-              className="btn-sweep btn-sweep-navy"
+              className="btn-navy"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 padding: "14px 32px",
-                background: "var(--color-navy)",
                 color: "white",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
@@ -102,12 +101,11 @@ export default function HeroSection() {
             </a>
             <a
               href="#recruit"
-              className="btn-sweep btn-sweep-navy-outline"
+              className="btn-navy-outline"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 padding: "14px 32px",
-                background: "transparent",
                 color: "var(--color-navy)",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",

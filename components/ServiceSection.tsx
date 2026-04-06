@@ -127,13 +127,12 @@ export default function ServiceSection() {
         }}>
           <a
             href="#"
-            className="btn-sweep btn-sweep-pill-service"
+            className="btn-pill-service"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
               padding: "12px 36px",
-              background: "#4D6C88",
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(13px, 1.33vw, 17px)",

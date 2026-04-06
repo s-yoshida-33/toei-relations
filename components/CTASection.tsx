@@ -71,13 +71,12 @@ export default function CTASection() {
           {/* CONTACT - white bg → #003E84 bg, white text on hover */}
           <a
             href="#"
-            className="btn-sweep btn-sweep-cta-contact"
+            className="btn-cta-contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
               padding: "16px 48px",
-              background: "white",
               color: "#003E84",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
@@ -93,13 +92,12 @@ export default function CTASection() {
           {/* RECRUIT - outlined → white bg, #003E84 text on hover */}
           <a
             href="#"
-            className="btn-sweep btn-sweep-cta-recruit"
+            className="btn-cta-recruit"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
               padding: "16px 48px",
-              background: "transparent",
               color: "#FFFFFF",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",

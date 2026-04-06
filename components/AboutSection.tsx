@@ -26,7 +26,7 @@ export default function AboutSection() {
         width: "100%",
         overflow: "hidden",
       }}>
-        {/* Background image - 100% natural height */}
+        {/* Background image - 100% width, natural aspect ratio, horizontal layout */}
         <div style={{ position: "relative", width: "100%" }}>
           <Image
             src="/images/about-bg.png"
@@ -38,17 +38,17 @@ export default function AboutSection() {
           />
         </div>
 
-        {/* Overlay content - no dark blur, no "about us" text */}
+        {/* Overlay content - positioned at bottom of image */}
         <div style={{
           position: "absolute",
           inset: 0,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          padding: "0 24px",
+          justifyContent: "flex-end",
+          padding: "0 24px 5%",
         }}>
-          {/* Description text - 16px at 1280px, color #FFFFFF */}
+          {/* Description text */}
           <div style={{
             maxWidth: 700,
             textAlign: "center",
@@ -66,11 +66,10 @@ export default function AboutSection() {
             }}>
               TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
             </p>
-            {/* Button - 17px, centered */}
             <div style={{ textAlign: "center" }}>
               <a
                 href="#company"
-                className="btn-sweep btn-sweep-pill-white"
+                className="btn-pill-white"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -83,7 +82,6 @@ export default function AboutSection() {
                   textDecoration: "none",
                   padding: "12px 36px",
                   borderRadius: 9999,
-                  background: "rgba(255,255,255,0.2)",
                   border: "none",
                 }}
               >
@@ -93,7 +91,6 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

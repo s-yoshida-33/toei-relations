@@ -33,44 +33,75 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
 
-/* ===== Shared button hover animation (right-to-left color inversion) ===== */
-.btn-sweep {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: color 0.4s ease;
+/* ===== Button hover: right-to-left background sweep via background-position ===== */
+
+/* Navy bg → White bg, text inverts */
+.btn-navy {
+  background: linear-gradient(to right, white 50%, var(--color-navy) 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease, color 0.4s ease !important;
 }
-.btn-sweep::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  z-index: -1;
-  border-radius: inherit;
-}
-.btn-sweep:hover::before {
-  transform: translateX(0);
+.btn-navy:hover {
+  background-position: left center !important;
+  color: var(--color-navy) !important;
 }
 
-/* Navy bg → White bg, navy text */
-.btn-sweep-navy::before { background: white; }
-.btn-sweep-navy:hover { color: var(--color-navy) !important; }
+/* Outlined navy → Navy fill, text inverts */
+.btn-navy-outline {
+  background: linear-gradient(to right, var(--color-navy) 50%, transparent 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease, color 0.4s ease !important;
+}
+.btn-navy-outline:hover {
+  background-position: left center !important;
+  color: white !important;
+}
 
-/* Outlined navy → Navy bg, white text */
-.btn-sweep-navy-outline::before { background: var(--color-navy); }
-.btn-sweep-navy-outline:hover { color: white !important; }
+/* Pill: white 20% → white 50% */
+.btn-pill-white {
+  background: linear-gradient(to right, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.2) 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease !important;
+}
+.btn-pill-white:hover {
+  background-position: left center !important;
+}
 
-/* Pill white 20% → White bg, dark text */
-.btn-sweep-pill-white::before { background: rgba(255,255,255,0.5); }
+/* Pill: #4D6C88 → darker */
+.btn-pill-service {
+  background: linear-gradient(to right, #3a5570 50%, #4D6C88 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease !important;
+}
+.btn-pill-service:hover {
+  background-position: left center !important;
+}
 
-/* Pill #4D6C88 → Darker sweep */
-.btn-sweep-pill-service::before { background: #3a5570; }
+/* CTA: white bg → #003E84 bg, text inverts */
+.btn-cta-contact {
+  background: linear-gradient(to right, #003E84 50%, white 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease, color 0.4s ease !important;
+}
+.btn-cta-contact:hover {
+  background-position: left center !important;
+  color: white !important;
+}
 
-/* CTA: white bg → #003E84 bg, white text */
-.btn-sweep-cta-contact::before { background: #003E84; }
-.btn-sweep-cta-contact:hover { color: white !important; }
-
-/* CTA: outlined → White bg, #003E84 text */
-.btn-sweep-cta-recruit::before { background: white; }
-.btn-sweep-cta-recruit:hover { color: #003E84 !important; }
+/* CTA: outlined → white bg, text inverts */
+.btn-cta-recruit {
+  background: linear-gradient(to right, white 50%, transparent 50%) !important;
+  background-size: 200% 100% !important;
+  background-position: right center !important;
+  transition: background-position 0.4s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+.btn-cta-recruit:hover {
+  background-position: left center !important;
+  color: #003E84 !important;
+  border-color: white !important;
+}
