@@ -23,6 +23,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
     <header
       style={{
@@ -50,14 +59,13 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-            <rect x="2" y="2" width="16" height="16" rx="2" fill="var(--color-navy)" />
-            <rect x="22" y="2" width="16" height="16" rx="2" fill="var(--color-accent)" />
-            <rect x="12" y="22" width="16" height="16" rx="2" fill="var(--color-navy)" />
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+            <path d="M20 15h60v8H55v62h-10V23H20v-8z" fill="var(--color-navy)" />
+            <path d="M62 40c0-6 4-10 10-10h8c6 0 10 4 10 10v8c0 6-4 10-10 10h-8c-6 0-10-4-10-10v-8z" fill="var(--color-accent)" />
           </svg>
           <span
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 13,
               fontWeight: 700,
               letterSpacing: "0.12em",
@@ -75,8 +83,9 @@ export default function Header() {
               key={item.label}
               href={item.href}
               style={{
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 11,
-                fontWeight: 500,
+                fontWeight: 700,
                 letterSpacing: "0.1em",
                 color: "var(--color-text)",
                 textDecoration: "none",
@@ -101,76 +110,95 @@ export default function Header() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="mobile-menu-btn"
+          aria-label="メニュー"
           style={{
             background: "none",
             border: "none",
             cursor: "pointer",
             padding: 8,
             display: "none",
+            position: "relative",
+            zIndex: 110,
           }}
         >
           <span style={{
             display: "block",
             width: 24,
             height: 2,
-            background: "var(--color-navy)",
+            background: menuOpen ? "white" : "var(--color-navy)",
             margin: "5px 0",
-            transition: "transform 0.3s",
+            transition: "transform 0.3s, background 0.3s",
             transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
           }} />
           <span style={{
             display: "block",
             width: 24,
             height: 2,
-            background: "var(--color-navy)",
+            background: menuOpen ? "white" : "var(--color-navy)",
             margin: "5px 0",
             opacity: menuOpen ? 0 : 1,
-            transition: "opacity 0.3s",
+            transition: "opacity 0.3s, background 0.3s",
           }} />
           <span style={{
             display: "block",
             width: 24,
             height: 2,
-            background: "var(--color-navy)",
+            background: menuOpen ? "white" : "var(--color-navy)",
             margin: "5px 0",
-            transition: "transform 0.3s",
+            transition: "transform 0.3s, background 0.3s",
             transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
           }} />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div style={{
-          background: "white",
-          borderTop: "1px solid var(--color-border)",
-          padding: "20px 24px",
-        }}>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                display: "block",
-                padding: "12px 0",
-                fontSize: 13,
-                letterSpacing: "0.1em",
-                color: "var(--color-text)",
-                textDecoration: "none",
-                borderBottom: "1px solid var(--color-border)",
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* Mobile Full Screen Menu */}
+      <div
+        className="mobile-overlay"
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "var(--color-navy)",
+          zIndex: 105,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? "auto" : "none",
+          transition: "opacity 0.3s ease",
+        }}
+      >
+        {navItems.map((item, i) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            style={{
+              display: "block",
+              padding: "16px 0",
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 16,
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              color: "white",
+              textDecoration: "none",
+              opacity: menuOpen ? 1 : 0,
+              transform: menuOpen ? "translateY(0)" : "translateY(10px)",
+              transition: `opacity 0.4s ease ${0.05 * i}s, transform 0.4s ease ${0.05 * i}s`,
+            }}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
 
       <style>{`
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
+        }
+        @media (min-width: 769px) {
+          .mobile-overlay { display: none !important; }
         }
       `}</style>
     </header>

@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'M PLUS 1p', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text);
   background: var(--color-white);
   overflow-x: hidden;

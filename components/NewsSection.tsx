@@ -35,15 +35,17 @@ export default function NewsSection() {
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}>
           <p style={{
-            fontSize: 11,
+            fontFamily: "'Inter', sans-serif",
+            fontSize: 14,
             letterSpacing: "0.25em",
-            color: "var(--color-accent)",
-            fontWeight: 500,
+            color: "var(--color-navy)",
+            fontWeight: 700,
             marginBottom: 4,
           }}>
             NEWS
           </p>
           <h2 style={{
+            fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(18px, 2.5vw, 24px)",
             fontWeight: 700,
             color: "var(--color-navy)",
@@ -83,6 +85,7 @@ export default function NewsSection() {
               }}
             >
               <span style={{
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 13,
                 color: "var(--color-text-light)",
                 fontWeight: 400,
@@ -95,6 +98,7 @@ export default function NewsSection() {
               <span
                 className="news-title"
                 style={{
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: 14,
                   color: "var(--color-text)",
                   fontWeight: 400,
@@ -102,13 +106,6 @@ export default function NewsSection() {
                 }}
               >
                 {item.title}
-              </span>
-              <span style={{
-                marginLeft: "auto",
-                fontSize: 18,
-                color: "var(--color-text-light)",
-              }}>
-                →
               </span>
             </a>
           ))}

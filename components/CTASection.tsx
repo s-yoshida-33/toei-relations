@@ -60,8 +60,9 @@ export default function CTASection() {
       >
         <h2
           style={{
+            fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(22px, 3.5vw, 34px)",
-            fontWeight: 700,
+            fontWeight: 600,
             color: "white",
             lineHeight: 1.7,
             marginBottom: 40,
@@ -93,23 +94,25 @@ export default function CTASection() {
               alignItems: "center",
               gap: 8,
               padding: "16px 48px",
-              background: "white",
-              color: "var(--color-navy)",
+              background: "transparent",
+              color: "white",
               textDecoration: "none",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,
+              border: "2px solid rgba(255,255,255,0.6)",
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "var(--color-accent)";
-              (e.currentTarget as HTMLElement).style.color = "white";
+              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
+              (e.currentTarget as HTMLElement).style.borderColor = "white";
               (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "white";
-              (e.currentTarget as HTMLElement).style.color = "var(--color-navy)";
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.6)";
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >
@@ -125,8 +128,9 @@ export default function CTASection() {
               background: "transparent",
               color: "white",
               textDecoration: "none",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid rgba(255,255,255,0.6)",

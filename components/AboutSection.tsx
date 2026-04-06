@@ -30,29 +30,31 @@ export default function AboutSection() {
         overflow: "hidden",
         background: "var(--color-navy-dark)",
       }}>
-        {/* Placeholder image - hands raised */}
+        {/* Sample placeholder image */}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(135deg, #1a3a5c 0%, #2a5a8c 50%, #1a3a5c 100%)",
+          background: "#8a9bb0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}>
-          {/* Decorative pattern simulating crowd/hands */}
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: `${i * 5 + 2}%`,
-                width: 30,
-                height: `${60 + Math.sin(i) * 20}%`,
-                background: `rgba(255,255,255,${0.05 + (i % 3) * 0.02})`,
-                borderRadius: "50% 50% 0 0",
-                transform: `rotate(${(i % 5 - 2) * 3}deg)`,
-              }}
-            />
-          ))}
+          <span style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: 14,
+            color: "rgba(255,255,255,0.5)",
+            letterSpacing: "0.1em",
+          }}>
+            SAMPLE IMAGE
+          </span>
         </div>
+
+        {/* Dark overlay */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(20, 40, 70, 0.5)",
+        }} />
 
         {/* Text overlay */}
         <div style={{
@@ -61,7 +63,6 @@ export default function AboutSection() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "rgba(20, 40, 70, 0.5)",
         }}>
           <div style={{ textAlign: "center" }}>
             {/* Bordered title */}
@@ -71,7 +72,7 @@ export default function AboutSection() {
               display: "inline-block",
             }}>
               <h2 style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "clamp(36px, 6vw, 72px)",
                 fontWeight: 400,
                 color: "white",
@@ -99,13 +100,16 @@ export default function AboutSection() {
           transition: "opacity 0.8s ease, transform 0.8s ease",
         }}>
           <p style={{
+            fontFamily: "'Inter', sans-serif",
             fontSize: 15,
+            fontWeight: 700,
             lineHeight: 2,
             color: "var(--color-text-light)",
             marginBottom: 32,
           }}>
-            TOEI RELATIONSは、社会人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。
-            多彩なマッチングによる両者の持続的に成長できる環境を創出することこそ、それが私たちのミッションです。
+            TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。
+            <br />
+            多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
           </p>
           <a
             href="#company"
@@ -113,19 +117,26 @@ export default function AboutSection() {
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
+              fontFamily: "'Inter', sans-serif",
               fontSize: 13,
-              fontWeight: 500,
+              fontWeight: 700,
               letterSpacing: "0.1em",
               color: "var(--color-navy)",
               textDecoration: "none",
-              borderBottom: "1px solid var(--color-navy)",
-              paddingBottom: 2,
-              transition: "color 0.2s",
+              padding: "12px 28px",
+              border: "1.5px solid var(--color-navy)",
+              transition: "all 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"}
-            onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-navy)"}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "var(--color-navy)";
+              (e.currentTarget as HTMLElement).style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+              (e.currentTarget as HTMLElement).style.color = "var(--color-navy)";
+            }}
           >
-            会社概要を見る →
+            会社概要を見る
           </a>
         </div>
       </div>

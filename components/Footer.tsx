@@ -38,13 +38,12 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-              <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
-                <rect x="2" y="2" width="16" height="16" rx="2" fill="var(--color-navy)" />
-                <rect x="22" y="2" width="16" height="16" rx="2" fill="var(--color-accent)" />
-                <rect x="12" y="22" width="16" height="16" rx="2" fill="var(--color-navy)" />
+              <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                <path d="M20 15h60v8H55v62h-10V23H20v-8z" fill="var(--color-navy)" />
+                <path d="M62 40c0-6 4-10 10-10h8c6 0 10 4 10 10v8c0 6-4 10-10 10h-8c-6 0-10-4-10-10v-8z" fill="var(--color-accent)" />
               </svg>
               <span style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 12,
                 fontWeight: 700,
                 letterSpacing: "0.12em",
@@ -62,7 +61,9 @@ export default function Footer() {
                 key={link.label}
                 href={link.href}
                 style={{
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: 11,
+                  fontWeight: 700,
                   letterSpacing: "0.1em",
                   color: "var(--color-text-light)",
                   textDecoration: "none",
@@ -83,7 +84,9 @@ export default function Footer() {
                 key={link.label}
                 href={link.href}
                 style={{
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: 11,
+                  fontWeight: 700,
                   letterSpacing: "0.1em",
                   color: "var(--color-text-light)",
                   textDecoration: "none",
@@ -105,6 +108,7 @@ export default function Footer() {
           textAlign: "center",
         }}>
           <p style={{
+            fontFamily: "'Inter', sans-serif",
             fontSize: 11,
             color: "var(--color-text-light)",
             letterSpacing: "0.05em",

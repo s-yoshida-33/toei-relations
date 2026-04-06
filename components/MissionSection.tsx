@@ -49,7 +49,7 @@ export default function MissionSection() {
         color: "rgba(255,255,255,0.03)",
         userSelect: "none",
         whiteSpace: "nowrap",
-        fontFamily: "'Playfair Display', serif",
+        fontFamily: "'Inter', sans-serif",
       }}>
         MISSION
       </div>
@@ -63,29 +63,10 @@ export default function MissionSection() {
           zIndex: 1,
         }}
       >
-        {/* Section label */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
-          marginBottom: 40,
-          opacity: inView ? 1 : 0,
-          transition: "opacity 0.8s ease",
-        }}>
-          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.4)" }} />
-          <span style={{
-            fontSize: 11,
-            letterSpacing: "0.2em",
-            color: "rgba(255,255,255,0.5)",
-            fontWeight: 500,
-          }}>
-            MISSION
-          </span>
-        </div>
-
         {/* Heading */}
         <h2
           style={{
+            fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(24px, 4vw, 40px)",
             fontWeight: 700,
             color: "white",
@@ -107,10 +88,11 @@ export default function MissionSection() {
             <p
               key={i}
               style={{
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 15,
                 lineHeight: 2,
                 color: "rgba(255,255,255,0.75)",
-                fontWeight: 300,
+                fontWeight: 100,
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(15px)",
                 transition: `opacity 0.7s ease ${0.2 + i * 0.08}s, transform 0.7s ease ${0.2 + i * 0.08}s`,
@@ -136,6 +118,7 @@ export default function MissionSection() {
               padding: "12px 28px",
               border: "1px solid rgba(255,255,255,0.4)",
               color: "white",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 12,
               letterSpacing: "0.12em",
               textDecoration: "none",
@@ -151,7 +134,7 @@ export default function MissionSection() {
               (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)";
             }}
           >
-            私たちの価値を見る →
+            私たちの信念
           </a>
         </div>
       </div>
