@@ -1,19 +1,25 @@
 "use client";
 import Image from "next/image";
 
-const footerLinks = {
-  left: [
-    { label: "TOP", href: "#top" },
-    { label: "ABOUT US", href: "#about" },
-    { label: "PHILOSOPHY", href: "#mission" },
-    { label: "SERVICE", href: "#service" },
-  ],
-  right: [
-    { label: "COMPANY", href: "#company" },
-    { label: "NEWS", href: "#news" },
-    { label: "RECRUIT", href: "#recruit" },
-    { label: "CONTACT", href: "#contact" },
-  ],
+const allLinks = [
+  { label: "TOP", href: "#top" },
+  { label: "ABOUT US", href: "#about" },
+  { label: "PHILOSOPHY", href: "#mission" },
+  { label: "COMPANY", href: "#company" },
+  { label: "SERVICE", href: "#service" },
+  { label: "NEWS", href: "#news" },
+  { label: "RECRUIT", href: "#recruit" },
+  { label: "CONTACT", href: "#contact" },
+];
+
+const linkStyle: React.CSSProperties = {
+  fontFamily: "'Inter', sans-serif",
+  fontSize: "clamp(11px, 1.09vw, 14px)",
+  fontWeight: 700,
+  letterSpacing: "0.1em",
+  color: "#4D6C88",
+  textDecoration: "none",
+  transition: "color 0.2s",
 };
 
 export default function Footer() {
@@ -27,65 +33,37 @@ export default function Footer() {
         maxWidth: 1100,
         margin: "0 auto",
       }}>
-        {/* Main footer - PC: 3-column (logo | nav-left | nav-right) */}
+        {/* Main footer: logo left + nav right (4col x 2row) */}
         <div className="footer-main" style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
+          display: "flex",
           gap: 40,
           marginBottom: 48,
           alignItems: "start",
         }}>
-          {/* Logo - 153x108 at 1280px */}
-          <div className="footer-logo">
-            <div style={{ marginBottom: 12 }}>
-              <Image
-                src="/images/logo.svg"
-                alt="TOEI RELATIONS"
-                width={153}
-                height={108}
-                style={{ width: "clamp(100px, 11.95vw, 153px)", height: "auto" }}
-              />
-            </div>
+          {/* Logo */}
+          <div style={{ flexShrink: 0 }}>
+            <Image
+              src="/images/logo.svg"
+              alt="TOEI RELATIONS"
+              width={153}
+              height={108}
+              style={{ width: "clamp(80px, 11.95vw, 153px)", height: "auto" }}
+            />
           </div>
 
-          {/* Nav left - 14px, #4D6C88 */}
-          <div className="footer-nav-left" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {footerLinks.left.map((link) => (
+          {/* Nav: 4 columns x 2 rows */}
+          <div className="footer-nav" style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, auto)",
+            gap: "16px 32px",
+            flex: 1,
+            paddingTop: 8,
+          }}>
+            {allLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(11px, 1.09vw, 14px)",
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  color: "#4D6C88",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#4D6C88"}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Nav right - 14px, #4D6C88 */}
-          <div className="footer-nav-right" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {footerLinks.right.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(11px, 1.09vw, 14px)",
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  color: "#4D6C88",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
+                style={linkStyle}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"}
                 onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#4D6C88"}
               >
@@ -95,11 +73,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright - #4D6C88, no border */}
-        <div style={{
-          paddingTop: 20,
-          textAlign: "center",
-        }}>
+        {/* Copyright */}
+        <div style={{ paddingTop: 20, textAlign: "center" }}>
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: 11,
@@ -114,14 +89,13 @@ export default function Footer() {
       <style>{`
         @media (max-width: 768px) {
           .footer-main {
-            grid-template-columns: 1fr !important;
+            flex-direction: column !important;
             gap: 24px !important;
+            align-items: flex-start !important;
           }
-          .footer-nav-left,
-          .footer-nav-right {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 12px !important;
+          .footer-nav {
+            grid-template-columns: repeat(4, auto) !important;
+            gap: 12px 20px !important;
           }
         }
       `}</style>
