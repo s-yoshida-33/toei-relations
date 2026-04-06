@@ -32,3 +32,45 @@ body {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
+
+/* ===== Shared button hover animation (right-to-left color inversion) ===== */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+.btn-sweep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+.btn-sweep:hover::before {
+  transform: translateX(0);
+}
+
+/* Navy bg → White bg, navy text */
+.btn-sweep-navy::before { background: white; }
+.btn-sweep-navy:hover { color: var(--color-navy) !important; }
+
+/* Outlined navy → Navy bg, white text */
+.btn-sweep-navy-outline::before { background: var(--color-navy); }
+.btn-sweep-navy-outline:hover { color: white !important; }
+
+/* Pill white 20% → White bg, dark text */
+.btn-sweep-pill-white::before { background: rgba(255,255,255,0.5); }
+
+/* Pill #4D6C88 → Darker sweep */
+.btn-sweep-pill-service::before { background: #3a5570; }
+
+/* CTA: white bg → #003E84 bg, white text */
+.btn-sweep-cta-contact::before { background: #003E84; }
+.btn-sweep-cta-contact:hover { color: white !important; }
+
+/* CTA: outlined → White bg, #003E84 text */
+.btn-sweep-cta-recruit::before { background: white; }
+.btn-sweep-cta-recruit:hover { color: #003E84 !important; }

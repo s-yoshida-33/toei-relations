@@ -127,7 +127,7 @@ export default function ServiceSection() {
         }}>
           <a
             href="#"
-            className="pill-btn-service"
+            className="btn-sweep btn-sweep-pill-service"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -141,9 +141,6 @@ export default function ServiceSection() {
               textDecoration: "none",
               fontWeight: 700,
               borderRadius: 9999,
-              position: "relative",
-              overflow: "hidden",
-              zIndex: 1,
               border: "none",
             }}
           >
@@ -157,19 +154,6 @@ export default function ServiceSection() {
           .service-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
-        }
-        .pill-btn-service::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: #3a5570;
-          transform: translateX(100%);
-          transition: transform 0.4s ease;
-          z-index: -1;
-          border-radius: 9999px;
-        }
-        .pill-btn-service:hover::before {
-          transform: translateX(0);
         }
       `}</style>
     </section>

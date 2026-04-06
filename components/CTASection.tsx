@@ -68,10 +68,10 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
-          {/* CONTACT - 32px, white bg, #003E84 text, pill hover animation */}
+          {/* CONTACT - white bg → #003E84 bg, white text on hover */}
           <a
             href="#"
-            className="cta-btn-contact"
+            className="btn-sweep btn-sweep-cta-contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -86,17 +86,14 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid white",
-              position: "relative",
-              overflow: "hidden",
-              zIndex: 1,
             }}
           >
             CONTACT
           </a>
-          {/* RECRUIT - 32px, outlined, #FFFFFF text, pill hover animation */}
+          {/* RECRUIT - outlined → white bg, #003E84 text on hover */}
           <a
             href="#"
-            className="cta-btn-recruit"
+            className="btn-sweep btn-sweep-cta-recruit"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -111,55 +108,12 @@ export default function CTASection() {
               letterSpacing: "0.15em",
               borderRadius: 2,
               border: "2px solid rgba(255,255,255,0.6)",
-              position: "relative",
-              overflow: "hidden",
-              zIndex: 1,
             }}
           >
             RECRUIT
           </a>
         </div>
       </div>
-
-      <style>{`
-        .cta-btn-contact::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: rgba(255,255,255,0.15);
-          transform: translateX(100%);
-          transition: transform 0.4s ease;
-          z-index: -1;
-        }
-        .cta-btn-contact:hover::before {
-          transform: translateX(0);
-        }
-        .cta-btn-contact:hover {
-          transform: translateY(-2px);
-        }
-        .cta-btn-contact {
-          transition: transform 0.2s ease;
-        }
-        .cta-btn-recruit::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: rgba(255,255,255,0.15);
-          transform: translateX(100%);
-          transition: transform 0.4s ease;
-          z-index: -1;
-        }
-        .cta-btn-recruit:hover::before {
-          transform: translateX(0);
-        }
-        .cta-btn-recruit:hover {
-          border-color: white !important;
-          transform: translateY(-2px);
-        }
-        .cta-btn-recruit {
-          transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-      `}</style>
     </section>
   );
 }

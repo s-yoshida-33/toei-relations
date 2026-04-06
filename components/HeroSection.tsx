@@ -83,6 +83,7 @@ export default function HeroSection() {
           >
             <a
               href="#contact"
+              className="btn-sweep btn-sweep-navy"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -95,21 +96,13 @@ export default function HeroSection() {
                 fontWeight: 500,
                 letterSpacing: "0.1em",
                 borderRadius: 2,
-                transition: "background 0.2s, transform 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--color-accent)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--color-navy)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
               CONTACT
             </a>
             <a
               href="#recruit"
+              className="btn-sweep btn-sweep-navy-outline"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -123,17 +116,6 @@ export default function HeroSection() {
                 letterSpacing: "0.1em",
                 borderRadius: 2,
                 border: "1.5px solid var(--color-navy)",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--color-navy)";
-                (e.currentTarget as HTMLElement).style.color = "white";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "transparent";
-                (e.currentTarget as HTMLElement).style.color = "var(--color-navy)";
-                (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
               RECRUIT

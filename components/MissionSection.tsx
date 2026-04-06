@@ -103,7 +103,7 @@ export default function MissionSection() {
         }}>
           <a
             href="#about"
-            className="pill-btn-mission"
+            className="btn-sweep btn-sweep-pill-white"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -117,9 +117,6 @@ export default function MissionSection() {
               textDecoration: "none",
               fontWeight: 500,
               borderRadius: 9999,
-              position: "relative",
-              overflow: "hidden",
-              zIndex: 1,
               border: "none",
             }}
           >
@@ -128,21 +125,6 @@ export default function MissionSection() {
         </div>
       </div>
 
-      <style>{`
-        .pill-btn-mission::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: rgba(255,255,255,0.35);
-          transform: translateX(100%);
-          transition: transform 0.4s ease;
-          z-index: -1;
-          border-radius: 9999px;
-        }
-        .pill-btn-mission:hover::before {
-          transform: translateX(0);
-        }
-      `}</style>
     </section>
   );
 }

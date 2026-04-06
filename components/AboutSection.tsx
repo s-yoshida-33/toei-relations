@@ -70,7 +70,7 @@ export default function AboutSection() {
             <div style={{ textAlign: "center" }}>
               <a
                 href="#company"
-                className="pill-btn-about"
+                className="btn-sweep btn-sweep-pill-white"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -84,9 +84,6 @@ export default function AboutSection() {
                   padding: "12px 36px",
                   borderRadius: 9999,
                   background: "rgba(255,255,255,0.2)",
-                  position: "relative",
-                  overflow: "hidden",
-                  zIndex: 1,
                   border: "none",
                 }}
               >
@@ -97,21 +94,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      <style>{`
-        .pill-btn-about::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: rgba(255,255,255,0.35);
-          transform: translateX(100%);
-          transition: transform 0.4s ease;
-          z-index: -1;
-          border-radius: 9999px;
-        }
-        .pill-btn-about:hover::before {
-          transform: translateX(0);
-        }
-      `}</style>
     </section>
   );
 }
