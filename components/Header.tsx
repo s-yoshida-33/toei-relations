@@ -49,27 +49,27 @@ export default function Header() {
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: 1280,
           margin: "0 auto",
           padding: "0 24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: 60,
+          height: 70,
         }}
       >
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
+        {/* Logo - 76x54 at 1280px */}
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
           <Image
             src="/images/logo.svg"
             alt="TOEI RELATIONS"
-            width={140}
-            height={32}
-            style={{ height: 28, width: "auto" }}
+            width={76}
+            height={54}
+            style={{ width: "clamp(56px, 5.94vw, 76px)", height: "auto" }}
           />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav - 14px at 1280px */}
         <nav style={{ display: "flex", gap: 28 }} className="desktop-nav">
           {navItems.map((item) => (
             <a
@@ -77,21 +77,18 @@ export default function Header() {
               href={item.href}
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 11,
+                fontSize: "clamp(10px, 1.09vw, 14px)",
                 fontWeight: 700,
                 letterSpacing: "0.1em",
-                color: "var(--color-text)",
+                color: "#000000",
                 textDecoration: "none",
                 transition: "color 0.2s",
-                opacity: 0.8,
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLElement).style.color = "var(--color-accent)";
-                (e.target as HTMLElement).style.opacity = "1";
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.color = "var(--color-text)";
-                (e.target as HTMLElement).style.opacity = "0.8";
+                (e.target as HTMLElement).style.color = "#000000";
               }}
             >
               {item.label}

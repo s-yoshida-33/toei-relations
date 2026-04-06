@@ -31,19 +31,20 @@ export default function CTASection() {
       <div
         ref={ref}
         style={{
-          maxWidth: 700,
+          maxWidth: 900,
           margin: "0 auto",
           textAlign: "center",
           position: "relative",
           zIndex: 1,
         }}
       >
+        {/* Heading - 48px at 1280px, #FFFFFF */}
         <h2
           style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(22px, 3.5vw, 34px)",
+            fontSize: "clamp(22px, 3.75vw, 48px)",
             fontWeight: 600,
-            color: "white",
+            color: "#FFFFFF",
             lineHeight: 1.7,
             marginBottom: 40,
             opacity: inView ? 1 : 0,
@@ -67,6 +68,7 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
+          {/* CONTACT - 32px at 1280px, white bg, #003E84 text */}
           <a
             href="#"
             style={{
@@ -78,7 +80,7 @@ export default function CTASection() {
               color: "#003E84",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
-              fontSize: 13,
+              fontSize: "clamp(18px, 2.5vw, 32px)",
               fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,
@@ -96,6 +98,7 @@ export default function CTASection() {
           >
             CONTACT
           </a>
+          {/* RECRUIT - 32px at 1280px, outlined, #FFFFFF text */}
           <a
             href="#"
             style={{
@@ -104,10 +107,10 @@ export default function CTASection() {
               gap: 8,
               padding: "16px 48px",
               background: "transparent",
-              color: "white",
+              color: "#FFFFFF",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
-              fontSize: 13,
+              fontSize: "clamp(18px, 2.5vw, 32px)",
               fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,

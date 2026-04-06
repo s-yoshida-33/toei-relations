@@ -5,7 +5,6 @@ import Image from "next/image";
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setInView(true); },
@@ -14,7 +13,6 @@ function useInView(threshold = 0.2) {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [threshold]);
-
   return { ref, inView };
 }
 
@@ -23,31 +21,24 @@ export default function AboutSection() {
 
   return (
     <section id="about" style={{ position: "relative", overflow: "hidden" }}>
-      {/* Full-width image with overlay */}
       <div ref={ref} style={{
         position: "relative",
-        height: "70vh",
-        minHeight: 500,
+        width: "100%",
         overflow: "hidden",
-        background: "var(--color-navy-dark)",
       }}>
-        {/* Background image */}
-        <Image
-          src="/images/about-bg.png"
-          alt="About us"
-          fill
-          style={{ objectFit: "cover", objectPosition: "center" }}
-          priority
-        />
+        {/* Background image - 100% height of image */}
+        <div style={{ position: "relative", width: "100%" }}>
+          <Image
+            src="/images/about-bg.png"
+            alt="About us"
+            width={1280}
+            height={720}
+            style={{ width: "100%", height: "auto", display: "block" }}
+            priority
+          />
+        </div>
 
-        {/* Dark overlay */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(20, 40, 70, 0.45)",
-        }} />
-
-        {/* Text overlay */}
+        {/* Overlay content - no dark blur */}
         <div style={{
           position: "absolute",
           inset: 0,
@@ -76,7 +67,7 @@ export default function AboutSection() {
             </h2>
           </div>
 
-          {/* Description text - below the bordered box, on the image */}
+          {/* Description text - 16px at 1280px, color #FFFFFF */}
           <div style={{
             maxWidth: 700,
             textAlign: "center",
@@ -86,55 +77,57 @@ export default function AboutSection() {
           }}>
             <p style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: 14,
+              fontSize: "clamp(12px, 1.25vw, 16px)",
               fontWeight: 700,
               lineHeight: 2,
-              color: "rgba(255,255,255,0.9)",
+              color: "#FFFFFF",
               marginBottom: 32,
             }}>
               TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
             </p>
-            <a
-              href="#company"
-              className="pill-btn pill-btn-white"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                fontFamily: "'Inter', sans-serif",
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                color: "white",
-                textDecoration: "none",
-                padding: "12px 32px",
-                borderRadius: 9999,
-                background: "rgba(255,255,255,0.2)",
-                position: "relative",
-                overflow: "hidden",
-                zIndex: 1,
-                border: "none",
-                transition: "color 0.4s ease",
-              }}
-            >
-              会社概要を見る
-            </a>
+            {/* Button - 17px, centered */}
+            <div style={{ textAlign: "center" }}>
+              <a
+                href="#company"
+                className="pill-btn-about"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "clamp(13px, 1.33vw, 17px)",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  color: "#FFFFFF",
+                  textDecoration: "none",
+                  padding: "12px 36px",
+                  borderRadius: 9999,
+                  background: "rgba(255,255,255,0.2)",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "none",
+                }}
+              >
+                会社概要を見る
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       <style>{`
-        .pill-btn-white::before {
+        .pill-btn-about::before {
           content: '';
           position: absolute;
           inset: 0;
-          background: rgba(255,255,255,0.45);
+          background: rgba(255,255,255,0.35);
           transform: translateX(100%);
           transition: transform 0.4s ease;
           z-index: -1;
           border-radius: 9999px;
         }
-        .pill-btn-white:hover::before {
+        .pill-btn-about:hover::before {
           transform: translateX(0);
         }
       `}</style>

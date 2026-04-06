@@ -34,28 +34,30 @@ export default function NewsSection() {
           transform: inView ? "translateY(0)" : "translateY(20px)",
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}>
+          {/* NEWS - 24px at 1280px, Inter Bold, #000000 */}
           <p style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 18,
+            fontSize: "clamp(18px, 1.875vw, 24px)",
             letterSpacing: "0.25em",
-            color: "var(--color-navy)",
+            color: "#000000",
             fontWeight: 700,
             marginBottom: 4,
           }}>
             NEWS
           </p>
+          {/* 最新のお知らせ - 16px at 1280px, #000000 */}
           <h2 style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 14,
+            fontSize: "clamp(12px, 1.25vw, 16px)",
             fontWeight: 700,
-            color: "var(--color-navy)",
+            color: "#000000",
             letterSpacing: "0.1em",
           }}>
             最新のお知らせ
           </h2>
         </div>
 
-        {/* News list */}
+        {/* News list - 24px at 1280px, #000000 */}
         <div>
           {newsItems.map((item, i) => (
             <a
@@ -81,17 +83,16 @@ export default function NewsSection() {
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.background = "transparent";
                 const title = (e.currentTarget as HTMLElement).querySelector(".news-title") as HTMLElement;
-                if (title) title.style.color = "var(--color-text)";
+                if (title) title.style.color = "#000000";
               }}
             >
               <span style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 13,
-                color: "var(--color-text-light)",
+                fontSize: "clamp(14px, 1.875vw, 24px)",
+                color: "#000000",
                 fontWeight: 400,
                 letterSpacing: "0.05em",
                 whiteSpace: "nowrap",
-                minWidth: 90,
               }}>
                 {item.date}
               </span>
@@ -99,8 +100,8 @@ export default function NewsSection() {
                 className="news-title"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 14,
-                  color: "var(--color-text)",
+                  fontSize: "clamp(14px, 1.875vw, 24px)",
+                  color: "#000000",
                   fontWeight: 400,
                   transition: "color 0.2s",
                 }}

@@ -35,20 +35,20 @@ export default function Footer() {
           marginBottom: 48,
           alignItems: "start",
         }}>
-          {/* Logo */}
+          {/* Logo - 153x108 at 1280px */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+            <div style={{ marginBottom: 12 }}>
               <Image
                 src="/images/logo.svg"
                 alt="TOEI RELATIONS"
-                width={120}
-                height={28}
-                style={{ height: 24, width: "auto" }}
+                width={153}
+                height={108}
+                style={{ width: "clamp(100px, 11.95vw, 153px)", height: "auto" }}
               />
             </div>
           </div>
 
-          {/* Nav left */}
+          {/* Nav left - 14px, #4D6C88 */}
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {footerLinks.left.map((link) => (
               <a
@@ -56,22 +56,22 @@ export default function Footer() {
                 href={link.href}
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 11,
+                  fontSize: "clamp(11px, 1.09vw, 14px)",
                   fontWeight: 700,
                   letterSpacing: "0.1em",
-                  color: "var(--color-text-light)",
+                  color: "#4D6C88",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-text-light)"}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#4D6C88"}
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Nav right */}
+          {/* Nav right - 14px, #4D6C88 */}
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {footerLinks.right.map((link) => (
               <a
@@ -79,15 +79,15 @@ export default function Footer() {
                 href={link.href}
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: 11,
+                  fontSize: "clamp(11px, 1.09vw, 14px)",
                   fontWeight: 700,
                   letterSpacing: "0.1em",
-                  color: "var(--color-text-light)",
+                  color: "#4D6C88",
                   textDecoration: "none",
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-accent)"}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "var(--color-text-light)"}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = "#4D6C88"}
               >
                 {link.label}
               </a>
@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright - #4D6C88 */}
         <div style={{
           borderTop: "1px solid var(--color-border)",
           paddingTop: 20,
@@ -104,7 +104,7 @@ export default function Footer() {
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: 11,
-            color: "var(--color-text-light)",
+            color: "#4D6C88",
             letterSpacing: "0.05em",
           }}>
             ©2026 TOEI RELATIONS Inc.

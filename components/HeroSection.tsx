@@ -19,11 +19,11 @@ export default function HeroSection() {
         position: "relative",
         overflow: "hidden",
         background: "white",
-        paddingTop: 60,
+        paddingTop: 70,
       }}
     >
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 1280,
         margin: "0 auto",
         padding: "0 24px",
         width: "100%",
@@ -37,13 +37,13 @@ export default function HeroSection() {
             transition: "opacity 0.9s ease, transform 0.9s ease",
           }}
         >
-          {/* Main heading */}
+          {/* Main heading - 96px at 1280px */}
           <h1 style={{
             fontFamily: "'M PLUS 1p', sans-serif",
-            fontSize: "clamp(42px, 7vw, 80px)",
+            fontSize: "clamp(36px, 7.5vw, 96px)",
             fontWeight: 700,
             lineHeight: 1.15,
-            color: "var(--color-navy)",
+            color: "#4D6C88",
             marginBottom: 24,
             letterSpacing: "-0.01em",
           }}>
@@ -52,13 +52,13 @@ export default function HeroSection() {
             possibilities.
           </h1>
 
-          {/* Sub text */}
+          {/* Sub text - 38px at 1280px */}
           <p
             style={{
               fontFamily: "'M PLUS 1p', sans-serif",
-              fontSize: 18,
+              fontSize: "clamp(18px, 2.97vw, 38px)",
               fontWeight: 700,
-              color: "var(--color-text-light)",
+              color: "#4D6C88",
               marginBottom: 48,
               letterSpacing: "0.05em",
               opacity: visible ? 1 : 0,
@@ -69,7 +69,7 @@ export default function HeroSection() {
             関わるすべてに、次の可能性をひらく。
           </p>
 
-          {/* CTA Buttons - CONTACT & RECRUIT */}
+          {/* CTA Buttons */}
           <div
             style={{
               display: "flex",

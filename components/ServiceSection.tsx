@@ -19,13 +19,12 @@ function useInView(threshold = 0.1) {
 const services = [
   { title: "人材派遣サービス", icon: "/images/services/dispatch.svg" },
   { title: "人材紹介サービス", icon: "/images/services/recruit.svg" },
-  { title: "業務請負（アウトソーシング）", icon: "/images/services/outsource.svg" },
+  { title: "業務請負\n（アウトソーシング）", icon: "/images/services/outsource.svg" },
   { title: "キャリア支援・研修", icon: "/images/services/career.svg" },
 ];
 
 export default function ServiceSection() {
   const { ref, inView } = useInView();
-  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <section id="service" style={{ background: "#f8f9fb", padding: "100px 24px" }}>
@@ -38,28 +37,30 @@ export default function ServiceSection() {
           transform: inView ? "translateY(0)" : "translateY(20px)",
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}>
+          {/* SERVICE - 24px at 1280px, Inter Bold, #000000 */}
           <p style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 18,
+            fontSize: "clamp(18px, 1.875vw, 24px)",
             letterSpacing: "0.25em",
-            color: "var(--color-navy)",
+            color: "#000000",
             fontWeight: 700,
             marginBottom: 4,
           }}>
             SERVICE
           </p>
+          {/* 事業内容 - 16px at 1280px, #000000 */}
           <h2 style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 14,
+            fontSize: "clamp(12px, 1.25vw, 16px)",
             fontWeight: 700,
-            color: "var(--color-navy)",
+            color: "#000000",
             letterSpacing: "0.1em",
           }}>
             事業内容
           </h2>
         </div>
 
-        {/* Service cards */}
+        {/* Service items - no card, just image + text */}
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
@@ -69,33 +70,16 @@ export default function ServiceSection() {
           {services.map((service, i) => (
             <div
               key={i}
-              onMouseEnter={() => setHovered(i)}
-              onMouseLeave={() => setHovered(null)}
               style={{
-                background: "white",
-                padding: "40px 20px 32px",
-                borderRadius: 4,
                 textAlign: "center",
-                cursor: "pointer",
                 opacity: inView ? 1 : 0,
-                transform: inView
-                  ? hovered === i ? "translateY(-6px)" : "translateY(0)"
-                  : "translateY(30px)",
-                transition: `
-                  opacity 0.7s ease ${0.1 + i * 0.1}s,
-                  transform ${inView ? "0.25s ease" : `0.7s ease ${0.1 + i * 0.1}s`},
-                  box-shadow 0.25s ease
-                `,
-                boxShadow: hovered === i
-                  ? "0 12px 40px rgba(26,58,92,0.12)"
-                  : "0 2px 12px rgba(0,0,0,0.04)",
+                transform: inView ? "translateY(0)" : "translateY(30px)",
+                transition: `opacity 0.7s ease ${0.1 + i * 0.1}s, transform 0.7s ease ${0.1 + i * 0.1}s`,
               }}
             >
-              {/* Service icon */}
+              {/* Icon - 190x214 at 1280px */}
               <div style={{
-                width: 80,
-                height: 80,
-                margin: "0 auto 20px",
+                margin: "0 auto 16px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -103,18 +87,23 @@ export default function ServiceSection() {
                 <Image
                   src={service.icon}
                   alt={service.title}
-                  width={64}
-                  height={64}
+                  width={190}
+                  height={214}
+                  style={{
+                    width: "clamp(120px, 14.84vw, 190px)",
+                    height: "auto",
+                  }}
                 />
               </div>
+              {/* Title - 16px at 1280px, #000000 */}
               <h3 style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 13,
+                fontSize: "clamp(12px, 1.25vw, 16px)",
                 fontWeight: 700,
-                color: "var(--color-navy)",
-                marginBottom: 0,
+                color: "#000000",
                 letterSpacing: "0.05em",
-                lineHeight: 1.5,
+                lineHeight: 1.6,
+                whiteSpace: "pre-line",
               }}>
                 {service.title}
               </h3>
@@ -122,24 +111,24 @@ export default function ServiceSection() {
           ))}
         </div>
 
-        {/* Detail button - centered, pill shape */}
+        {/* Detail button - 17px, right-aligned, pill */}
         <div style={{
-          textAlign: "center",
+          textAlign: "right",
           opacity: inView ? 1 : 0,
           transition: "opacity 0.7s ease 0.5s",
         }}>
           <a
             href="#"
-            className="pill-btn pill-btn-service"
+            className="pill-btn-service"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "12px 32px",
+              padding: "12px 36px",
               background: "#4D6C88",
-              color: "white",
+              color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
-              fontSize: 12,
+              fontSize: "clamp(13px, 1.33vw, 17px)",
               letterSpacing: "0.12em",
               textDecoration: "none",
               fontWeight: 700,
@@ -148,7 +137,6 @@ export default function ServiceSection() {
               overflow: "hidden",
               zIndex: 1,
               border: "none",
-              transition: "color 0.4s ease",
             }}
           >
             詳細を見る
