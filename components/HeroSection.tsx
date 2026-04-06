@@ -37,21 +37,21 @@ export default function HeroSection() {
             transition: "opacity 0.9s ease, transform 0.9s ease",
           }}
         >
-          {/* Main heading - 96px at 1280px, with 76px spacing between lines */}
+          {/* Main heading - 96px at 1280px */}
           <div style={{
             fontFamily: "'M PLUS 1p', sans-serif",
             fontSize: "clamp(36px, 7.5vw, 96px)",
             fontWeight: 700,
             color: "#4D6C88",
             letterSpacing: "-0.01em",
+            lineHeight: 1.6,
           }}>
             <span style={{ display: "block" }}>Creating new</span>
-            <span style={{ display: "block", height: "clamp(30px, 5.94vw, 76px)" }} />
             <span style={{ display: "block" }}>possibilities.</span>
           </div>
 
-          {/* 76px spacing before subtitle */}
-          <div style={{ height: "clamp(30px, 5.94vw, 76px)" }} />
+          {/* Spacing before subtitle - reduced */}
+          <div style={{ height: "clamp(20px, 3.5vw, 45px)" }} />
 
           {/* Sub text - 38px at 1280px */}
           <p
@@ -70,11 +70,11 @@ export default function HeroSection() {
             関わるすべてに、次の可能性をひらく。
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - 1.5x size */}
           <div
             style={{
               display: "flex",
-              gap: 16,
+              gap: 20,
               flexWrap: "wrap",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -87,14 +87,15 @@ export default function HeroSection() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                padding: "14px 32px",
+                padding: "20px 48px",
                 color: "white",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 13,
+                fontSize: 19,
                 fontWeight: 500,
                 letterSpacing: "0.1em",
                 borderRadius: 2,
+                border: "1.5px solid var(--color-navy)",
               }}
             >
               CONTACT
@@ -105,11 +106,11 @@ export default function HeroSection() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                padding: "14px 32px",
+                padding: "20px 48px",
                 color: "var(--color-navy)",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 13,
+                fontSize: 19,
                 fontWeight: 500,
                 letterSpacing: "0.1em",
                 borderRadius: 2,
