@@ -89,13 +89,14 @@ export default function Footer() {
       <style>{`
         @media (max-width: 768px) {
           .footer-main {
-            flex-direction: column !important;
-            gap: 24px !important;
-            align-items: flex-start !important;
+            gap: 20px !important;
           }
           .footer-nav {
-            grid-template-columns: repeat(4, auto) !important;
-            gap: 12px 20px !important;
+            gap: 10px 16px !important;
+            font-size: 11px !important;
+          }
+          .footer-nav a {
+            font-size: 11px !important;
           }
         }
       `}</style>
