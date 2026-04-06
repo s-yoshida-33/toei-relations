@@ -60,7 +60,7 @@ export default function HeroSection() {
               fontSize: "clamp(18px, 2.97vw, 38px)",
               fontWeight: 700,
               color: "#4D6C88",
-              marginBottom: 48,
+              marginBottom: 72,
               letterSpacing: "0.05em",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
