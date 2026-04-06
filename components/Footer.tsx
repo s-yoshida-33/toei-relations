@@ -27,8 +27,8 @@ export default function Footer() {
         maxWidth: 1100,
         margin: "0 auto",
       }}>
-        {/* Main footer */}
-        <div style={{
+        {/* Main footer - PC: 3-column (logo | nav-left | nav-right) */}
+        <div className="footer-main" style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
           gap: 40,
@@ -36,7 +36,7 @@ export default function Footer() {
           alignItems: "start",
         }}>
           {/* Logo - 153x108 at 1280px */}
-          <div>
+          <div className="footer-logo">
             <div style={{ marginBottom: 12 }}>
               <Image
                 src="/images/logo.svg"
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Nav left - 14px, #4D6C88 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div className="footer-nav-left" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {footerLinks.left.map((link) => (
               <a
                 key={link.label}
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
 
           {/* Nav right - 14px, #4D6C88 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div className="footer-nav-right" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {footerLinks.right.map((link) => (
               <a
                 key={link.label}
@@ -112,9 +112,20 @@ export default function Footer() {
       </div>
 
       <style>{`
-        @media (max-width: 600px) {
-          footer > div > div:first-child {
+        @media (max-width: 768px) {
+          .footer-main {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+          .footer-logo {
+            text-align: center;
+          }
+          .footer-nav-left,
+          .footer-nav-right {
+            display: grid !important;
             grid-template-columns: 1fr 1fr !important;
+            gap: 16px !important;
+            text-align: center;
           }
         }
       `}</style>
