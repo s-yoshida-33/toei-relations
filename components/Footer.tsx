@@ -115,17 +115,13 @@ export default function Footer() {
         @media (max-width: 768px) {
           .footer-main {
             grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
-          .footer-logo {
-            text-align: center;
+            gap: 24px !important;
           }
           .footer-nav-left,
           .footer-nav-right {
             display: grid !important;
             grid-template-columns: 1fr 1fr !important;
-            gap: 16px !important;
-            text-align: center;
+            gap: 12px !important;
           }
         }
       `}</style>

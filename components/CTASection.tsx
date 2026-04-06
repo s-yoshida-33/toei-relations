@@ -68,48 +68,40 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
-          {/* CONTACT - outlined white, fills white on hover */}
+          {/* CONTACT - white bg, #003E84 text → hover: #003E84 bg, white text */}
           <a
             href="#"
-            className="btn-cta-contact"
+            className="btn-cta-contact fv-btn"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 8,
-              padding: "16px 48px",
+              justifyContent: "center",
               color: "#003E84",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(18px, 2.5vw, 32px)",
-              fontWeight: 400,
-              letterSpacing: "0.15em",
+              fontWeight: 500,
+              letterSpacing: "0.1em",
               borderRadius: 2,
-              border: "2px solid white",
-              minWidth: 200,
-              justifyContent: "center",
+              border: "1.5px solid white",
             }}
           >
             CONTACT
           </a>
-          {/* RECRUIT - outlined → white bg, #003E84 text on hover */}
+          {/* RECRUIT - transparent, white text → hover: white bg, #003E84 text */}
           <a
             href="#"
-            className="btn-cta-recruit"
+            className="btn-cta-recruit fv-btn"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 8,
-              padding: "16px 48px",
+              justifyContent: "center",
               color: "#FFFFFF",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(18px, 2.5vw, 32px)",
-              fontWeight: 400,
-              letterSpacing: "0.15em",
+              fontWeight: 500,
+              letterSpacing: "0.1em",
               borderRadius: 2,
-              border: "2px solid white",
-              minWidth: 200,
-              justifyContent: "center",
+              border: "1.5px solid white",
             }}
           >
             RECRUIT

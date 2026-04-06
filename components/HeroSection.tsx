@@ -154,9 +154,6 @@ export default function HeroSection() {
             padding: 14px 32px;
             font-size: 13px;
           }
-          .fv-btn-wrap {
-            justify-content: center !important;
-          }
         }
         @keyframes scrollLine {
           0% { transform: scaleY(0); transform-origin: top; }
