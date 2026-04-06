@@ -103,7 +103,7 @@ body {
 
 /* CTA CONTACT: white bg → #003E84 bg */
 .btn-cta-contact {
-  background: linear-gradient(to right, #003E84 50%, white 50%) !important;
+  background-image: linear-gradient(to right, #003E84 50%, white 50%) !important;
 }
 .btn-cta-contact:hover {
   color: white !important;
@@ -111,7 +111,7 @@ body {
 
 /* CTA RECRUIT: transparent → white bg */
 .btn-cta-recruit {
-  background: linear-gradient(to right, white 50%, transparent 50%) !important;
+  background-image: linear-gradient(to right, white 50%, transparent 50%) !important;
 }
 .btn-cta-recruit:hover {
   color: #003E84 !important;
