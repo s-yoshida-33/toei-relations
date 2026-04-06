@@ -22,32 +22,12 @@ export default function CTASection() {
     <section
       id="contact"
       style={{
-        background: "var(--color-navy)",
+        background: "#003E84",
         padding: "80px 24px",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Decorative circles */}
-      <div style={{
-        position: "absolute",
-        top: "-40%",
-        right: "-10%",
-        width: 400,
-        height: 400,
-        borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.05)",
-      }} />
-      <div style={{
-        position: "absolute",
-        bottom: "-30%",
-        left: "-5%",
-        width: 300,
-        height: 300,
-        borderRadius: "50%",
-        border: "1px solid rgba(255,255,255,0.05)",
-      }} />
-
       <div
         ref={ref}
         style={{
@@ -94,25 +74,23 @@ export default function CTASection() {
               alignItems: "center",
               gap: 8,
               padding: "16px 48px",
-              background: "transparent",
-              color: "white",
+              background: "white",
+              color: "#003E84",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
               fontSize: 13,
               fontWeight: 400,
               letterSpacing: "0.15em",
               borderRadius: 2,
-              border: "2px solid rgba(255,255,255,0.6)",
+              border: "2px solid white",
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-              (e.currentTarget as HTMLElement).style.borderColor = "white";
+              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.85)";
               (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.6)";
+              (e.currentTarget as HTMLElement).style.background = "white";
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >

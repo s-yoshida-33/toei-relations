@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { label: "TOP", href: "#top" },
@@ -59,21 +60,13 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
-          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
-            <path d="M20 15h60v8H55v62h-10V23H20v-8z" fill="var(--color-navy)" />
-            <path d="M62 40c0-6 4-10 10-10h8c6 0 10 4 10 10v8c0 6-4 10-10 10h-8c-6 0-10-4-10-10v-8z" fill="var(--color-accent)" />
-          </svg>
-          <span
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 13,
-              fontWeight: 700,
-              letterSpacing: "0.12em",
-              color: "var(--color-navy)",
-            }}
-          >
-            TOEI RELATIONS
-          </span>
+          <Image
+            src="/images/logo.svg"
+            alt="TOEI RELATIONS"
+            width={140}
+            height={32}
+            style={{ height: 28, width: "auto" }}
+          />
         </Link>
 
         {/* Desktop Nav */}

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,10 +17,10 @@ function useInView(threshold = 0.1) {
 }
 
 const services = [
-  { title: "人材派遣サービス" },
-  { title: "人材紹介サービス" },
-  { title: "業務請負（アウトソーシング）" },
-  { title: "キャリア支援・研修" },
+  { title: "人材派遣サービス", icon: "/images/services/dispatch.svg" },
+  { title: "人材紹介サービス", icon: "/images/services/recruit.svg" },
+  { title: "業務請負（アウトソーシング）", icon: "/images/services/outsource.svg" },
+  { title: "キャリア支援・研修", icon: "/images/services/career.svg" },
 ];
 
 export default function ServiceSection() {
@@ -39,29 +40,23 @@ export default function ServiceSection() {
         }}>
           <p style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 14,
+            fontSize: 18,
             letterSpacing: "0.25em",
             color: "var(--color-navy)",
             fontWeight: 700,
-            marginBottom: 8,
+            marginBottom: 4,
           }}>
             SERVICE
           </p>
           <h2 style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(20px, 3vw, 28px)",
+            fontSize: 14,
             fontWeight: 700,
             color: "var(--color-navy)",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.1em",
           }}>
             事業内容
           </h2>
-          <div style={{
-            width: 40,
-            height: 2,
-            background: "var(--color-accent)",
-            margin: "16px auto 0",
-          }} />
         </div>
 
         {/* Service cards */}
@@ -78,7 +73,7 @@ export default function ServiceSection() {
               onMouseLeave={() => setHovered(null)}
               style={{
                 background: "white",
-                padding: "40px 20px",
+                padding: "40px 20px 32px",
                 borderRadius: 4,
                 textAlign: "center",
                 cursor: "pointer",
@@ -96,34 +91,30 @@ export default function ServiceSection() {
                   : "0 2px 12px rgba(0,0,0,0.04)",
               }}
             >
-              {/* Sample icon placeholder */}
+              {/* Service icon */}
               <div style={{
                 width: 80,
                 height: 80,
                 margin: "0 auto 20px",
-                background: "#e8eef4",
-                borderRadius: 8,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "var(--color-accent)",
               }}>
-                <span style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: 10,
-                  color: "var(--color-text-light)",
-                  letterSpacing: "0.05em",
-                }}>
-                  SAMPLE
-                </span>
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={64}
+                  height={64}
+                />
               </div>
               <h3 style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: 700,
                 color: "var(--color-navy)",
                 marginBottom: 0,
                 letterSpacing: "0.05em",
+                lineHeight: 1.5,
               }}>
                 {service.title}
               </h3>
@@ -131,7 +122,7 @@ export default function ServiceSection() {
           ))}
         </div>
 
-        {/* Detail button - centered */}
+        {/* Detail button - centered, pill shape */}
         <div style={{
           textAlign: "center",
           opacity: inView ? 1 : 0,
@@ -139,23 +130,26 @@ export default function ServiceSection() {
         }}>
           <a
             href="#"
+            className="pill-btn pill-btn-service"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "12px 28px",
-              background: "var(--color-navy)",
+              padding: "12px 32px",
+              background: "#4D6C88",
               color: "white",
               fontFamily: "'Inter', sans-serif",
               fontSize: 12,
               letterSpacing: "0.12em",
               textDecoration: "none",
               fontWeight: 700,
-              borderRadius: 2,
-              transition: "background 0.2s",
+              borderRadius: 9999,
+              position: "relative",
+              overflow: "hidden",
+              zIndex: 1,
+              border: "none",
+              transition: "color 0.4s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.background = "var(--color-accent)"}
-            onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.background = "var(--color-navy)"}
           >
             詳細を見る
           </a>
@@ -172,6 +166,19 @@ export default function ServiceSection() {
           .service-grid {
             grid-template-columns: 1fr !important;
           }
+        }
+        .pill-btn-service::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: #3a5570;
+          transform: translateX(100%);
+          transition: transform 0.4s ease;
+          z-index: -1;
+          border-radius: 9999px;
+        }
+        .pill-btn-service:hover::before {
+          transform: translateX(0);
         }
       `}</style>
     </section>

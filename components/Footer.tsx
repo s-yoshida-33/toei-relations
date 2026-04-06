@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   left: [
@@ -38,19 +38,13 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-              <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-                <path d="M20 15h60v8H55v62h-10V23H20v-8z" fill="var(--color-navy)" />
-                <path d="M62 40c0-6 4-10 10-10h8c6 0 10 4 10 10v8c0 6-4 10-10 10h-8c-6 0-10-4-10-10v-8z" fill="var(--color-accent)" />
-              </svg>
-              <span style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                color: "var(--color-navy)",
-              }}>
-                TOEI RELATIONS
-              </span>
+              <Image
+                src="/images/logo.svg"
+                alt="TOEI RELATIONS"
+                width={120}
+                height={28}
+                style={{ height: 24, width: "auto" }}
+              />
             </div>
           </div>
 

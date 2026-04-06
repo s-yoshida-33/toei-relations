@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -53,6 +54,14 @@ export default function MissionSection() {
       }}>
         MISSION
       </div>
+
+      {/* Background image */}
+      <Image
+        src="/images/mission-bg.png"
+        alt=""
+        fill
+        style={{ objectFit: "cover", objectPosition: "center", opacity: 0.15 }}
+      />
 
       <div
         ref={ref}
@@ -111,33 +120,47 @@ export default function MissionSection() {
         }}>
           <a
             href="#about"
+            className="pill-btn pill-btn-mission"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "12px 28px",
-              border: "1px solid rgba(255,255,255,0.4)",
+              padding: "12px 32px",
+              background: "rgba(255,255,255,0.2)",
               color: "white",
               fontFamily: "'Inter', sans-serif",
               fontSize: 12,
               letterSpacing: "0.12em",
               textDecoration: "none",
               fontWeight: 500,
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.1)";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.8)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.4)";
+              borderRadius: 9999,
+              position: "relative",
+              overflow: "hidden",
+              zIndex: 1,
+              border: "none",
+              transition: "color 0.4s ease",
             }}
           >
             私たちの信念
           </a>
         </div>
       </div>
+
+      <style>{`
+        .pill-btn-mission::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.45);
+          transform: translateX(100%);
+          transition: transform 0.4s ease;
+          z-index: -1;
+          border-radius: 9999px;
+        }
+        .pill-btn-mission:hover::before {
+          transform: translateX(0);
+        }
+      `}</style>
     </section>
   );
 }

@@ -36,7 +36,7 @@ export default function NewsSection() {
         }}>
           <p style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: 14,
+            fontSize: 18,
             letterSpacing: "0.25em",
             color: "var(--color-navy)",
             fontWeight: 700,
@@ -46,10 +46,10 @@ export default function NewsSection() {
           </p>
           <h2 style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(18px, 2.5vw, 24px)",
+            fontSize: 14,
             fontWeight: 700,
             color: "var(--color-navy)",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.1em",
           }}>
             最新のお知らせ
           </h2>

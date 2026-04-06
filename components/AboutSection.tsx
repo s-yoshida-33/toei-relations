@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,37 +24,27 @@ export default function AboutSection() {
   return (
     <section id="about" style={{ position: "relative", overflow: "hidden" }}>
       {/* Full-width image with overlay */}
-      <div style={{
+      <div ref={ref} style={{
         position: "relative",
-        height: "60vh",
-        minHeight: 400,
+        height: "70vh",
+        minHeight: 500,
         overflow: "hidden",
         background: "var(--color-navy-dark)",
       }}>
-        {/* Sample placeholder image */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          background: "#8a9bb0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}>
-          <span style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: 14,
-            color: "rgba(255,255,255,0.5)",
-            letterSpacing: "0.1em",
-          }}>
-            SAMPLE IMAGE
-          </span>
-        </div>
+        {/* Background image */}
+        <Image
+          src="/images/about-bg.png"
+          alt="About us"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
 
         {/* Dark overlay */}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(20, 40, 70, 0.5)",
+          background: "rgba(20, 40, 70, 0.45)",
         }} />
 
         {/* Text overlay */}
@@ -61,85 +52,92 @@ export default function AboutSection() {
           position: "absolute",
           inset: 0,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          padding: "0 24px",
         }}>
-          <div style={{ textAlign: "center" }}>
-            {/* Bordered title */}
-            <div style={{
-              border: "1.5px solid rgba(255,255,255,0.7)",
-              padding: "20px 60px",
-              display: "inline-block",
+          {/* Bordered title */}
+          <div style={{
+            border: "1.5px solid rgba(255,255,255,0.7)",
+            padding: "20px 60px",
+            display: "inline-block",
+            marginBottom: 40,
+          }}>
+            <h2 style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "clamp(36px, 6vw, 72px)",
+              fontWeight: 400,
+              color: "white",
+              letterSpacing: "0.05em",
+              fontStyle: "italic",
             }}>
-              <h2 style={{
+              about us
+            </h2>
+          </div>
+
+          {/* Description text - below the bordered box, on the image */}
+          <div style={{
+            maxWidth: 700,
+            textAlign: "center",
+            opacity: inView ? 1 : 0,
+            transform: inView ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
+          }}>
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 14,
+              fontWeight: 700,
+              lineHeight: 2,
+              color: "rgba(255,255,255,0.9)",
+              marginBottom: 32,
+            }}>
+              TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
+            </p>
+            <a
+              href="#company"
+              className="pill-btn pill-btn-white"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(36px, 6vw, 72px)",
-                fontWeight: 400,
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
                 color: "white",
-                letterSpacing: "0.05em",
-                fontStyle: "italic",
-              }}>
-                about us
-              </h2>
-            </div>
+                textDecoration: "none",
+                padding: "12px 32px",
+                borderRadius: 9999,
+                background: "rgba(255,255,255,0.2)",
+                position: "relative",
+                overflow: "hidden",
+                zIndex: 1,
+                border: "none",
+                transition: "color 0.4s ease",
+              }}
+            >
+              会社概要を見る
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Description */}
-      <div ref={ref} style={{
-        background: "white",
-        padding: "60px 24px",
-      }}>
-        <div style={{
-          maxWidth: 800,
-          margin: "0 auto",
-          textAlign: "center",
-          opacity: inView ? 1 : 0,
-          transform: inView ? "translateY(0)" : "translateY(30px)",
-          transition: "opacity 0.8s ease, transform 0.8s ease",
-        }}>
-          <p style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: 15,
-            fontWeight: 700,
-            lineHeight: 2,
-            color: "var(--color-text-light)",
-            marginBottom: 32,
-          }}>
-            TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。
-            <br />
-            多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
-          </p>
-          <a
-            href="#company"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 13,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              color: "var(--color-navy)",
-              textDecoration: "none",
-              padding: "12px 28px",
-              border: "1.5px solid var(--color-navy)",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "var(--color-navy)";
-              (e.currentTarget as HTMLElement).style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "transparent";
-              (e.currentTarget as HTMLElement).style.color = "var(--color-navy)";
-            }}
-          >
-            会社概要を見る
-          </a>
-        </div>
-      </div>
+      <style>{`
+        .pill-btn-white::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.45);
+          transform: translateX(100%);
+          transition: transform 0.4s ease;
+          z-index: -1;
+          border-radius: 9999px;
+        }
+        .pill-btn-white:hover::before {
+          transform: translateX(0);
+        }
+      `}</style>
     </section>
   );
 }
