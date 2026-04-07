@@ -27,7 +27,7 @@ export default function ServiceSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="service" style={{ background: "#f8f9fb", padding: "clamp(60px, 7.8vw, 100px) clamp(16px, 3vw, 24px)" }}>
+    <section id="service" style={{ background: "#f8f9fb", padding: "clamp(80px, 10vw, 140px) clamp(16px, 3vw, 24px)" }}>
       <div ref={ref} style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* Header */}
         <div style={{

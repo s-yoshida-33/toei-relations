@@ -25,23 +25,20 @@ const linkStyle: React.CSSProperties = {
 
 export default function Footer() {
   return (
-    <footer style={{
-      background: "#f0f3f6",
-      padding: "clamp(32px, 4.7vw, 60px) clamp(16px, 3vw, 24px) clamp(20px, 2.5vw, 32px)",
-      borderTop: "1px solid var(--color-border)",
-    }}>
+    <footer>
+      {/* Main footer */}
       <div style={{
-        maxWidth: 1100,
-        margin: "0 auto",
+        background: "#f0f3f6",
+        padding: "clamp(40px, 5vw, 72px) clamp(16px, 3vw, 24px)",
       }}>
-        {/* Main footer: logo left + nav right */}
         <div style={{
+          maxWidth: 1100,
+          margin: "0 auto",
           display: "flex",
           gap: "clamp(16px, 3vw, 40px)",
-          marginBottom: "clamp(24px, 3.75vw, 48px)",
           alignItems: "start",
         }}>
-          {/* Logo - fluid */}
+          {/* Logo */}
           <div style={{ flexShrink: 0 }}>
             <Image
               src="/images/logo.svg"
@@ -52,7 +49,7 @@ export default function Footer() {
             />
           </div>
 
-          {/* Nav: auto-fit grid - adjusts columns automatically */}
+          {/* Nav: 4 columns x 2 rows */}
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, auto)",
@@ -73,18 +70,22 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div style={{ paddingTop: "clamp(12px, 1.5vw, 20px)", textAlign: "center" }}>
-          <p style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: 11,
-            color: "#4D6C88",
-            letterSpacing: "0.05em",
-          }}>
-            ©2026 TOEI RELATIONS Inc.
-          </p>
-        </div>
+      {/* Sub footer - copyright */}
+      <div style={{
+        background: "#e8ecf0",
+        padding: "clamp(16px, 2vw, 24px) clamp(16px, 3vw, 24px)",
+        textAlign: "center",
+      }}>
+        <p style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: 11,
+          color: "#4D6C88",
+          letterSpacing: "0.05em",
+        }}>
+          ©2026 TOEI RELATIONS Inc.
+        </p>
       </div>
     </footer>
   );

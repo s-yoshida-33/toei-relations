@@ -25,11 +25,11 @@ export default function NewsSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="news" style={{ background: "white", padding: "100px 24px" }}>
+    <section id="news" style={{ background: "white", padding: "clamp(80px, 10vw, 140px) clamp(16px, 3vw, 24px)" }}>
       <div ref={ref} style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Header */}
         <div style={{
-          marginBottom: 48,
+          marginBottom: "clamp(32px, 3.75vw, 48px)",
           opacity: inView ? 1 : 0,
           transform: inView ? "translateY(0)" : "translateY(20px)",
           transition: "opacity 0.7s ease, transform 0.7s ease",

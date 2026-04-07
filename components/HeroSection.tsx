@@ -60,7 +60,6 @@ export default function HeroSection() {
               fontSize: "clamp(18px, 2.97vw, 38px)",
               fontWeight: 700,
               color: "#4D6C88",
-              marginBottom: "clamp(36px, 5.6vw, 72px)",
               letterSpacing: "0.05em",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -69,59 +68,6 @@ export default function HeroSection() {
           >
             関わるすべてに、次の可能性をひらく。
           </p>
-
-          {/* CTA Buttons - fully fluid */}
-          <div
-            style={{
-              display: "flex",
-              gap: "clamp(12px, 1.5vw, 20px)",
-              flexWrap: "wrap",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.9s ease 0.35s, transform 0.9s ease 0.35s",
-            }}
-          >
-            <a
-              href="#contact"
-              className="btn-navy"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
-                fontSize: "clamp(13px, 1.48vw, 19px)",
-                color: "white",
-                textDecoration: "none",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 500,
-                letterSpacing: "0.1em",
-                borderRadius: 2,
-                border: "1.5px solid var(--color-navy)",
-              }}
-            >
-              CONTACT
-            </a>
-            <a
-              href="#recruit"
-              className="btn-navy-outline"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
-                fontSize: "clamp(13px, 1.48vw, 19px)",
-                color: "var(--color-navy)",
-                textDecoration: "none",
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 500,
-                letterSpacing: "0.1em",
-                borderRadius: 2,
-                border: "1.5px solid var(--color-navy)",
-              }}
-            >
-              RECRUIT
-            </a>
-          </div>
         </div>
       </div>
 
