@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div style={{
         maxWidth: 1280,
         margin: "0 auto",
-        padding: "0 24px",
+        padding: "0 clamp(16px, 3vw, 24px)",
         width: "100%",
         position: "relative",
         zIndex: 1,
@@ -37,7 +37,7 @@ export default function HeroSection() {
             transition: "opacity 0.9s ease, transform 0.9s ease",
           }}
         >
-          {/* Main heading - 96px at 1280px */}
+          {/* Main heading - fluid 36px → 96px */}
           <div style={{
             fontFamily: "'M PLUS 1p', sans-serif",
             fontSize: "clamp(36px, 7.5vw, 96px)",
@@ -50,17 +50,17 @@ export default function HeroSection() {
             <span style={{ display: "block" }}>possibilities.</span>
           </div>
 
-          {/* Spacing before subtitle - reduced */}
+          {/* Spacing before subtitle */}
           <div style={{ height: "clamp(20px, 3.5vw, 45px)" }} />
 
-          {/* Sub text - 38px at 1280px */}
+          {/* Sub text - fluid 18px → 38px */}
           <p
             style={{
               fontFamily: "'M PLUS 1p', sans-serif",
               fontSize: "clamp(18px, 2.97vw, 38px)",
               fontWeight: 700,
               color: "#4D6C88",
-              marginBottom: 72,
+              marginBottom: "clamp(36px, 5.6vw, 72px)",
               letterSpacing: "0.05em",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -70,12 +70,11 @@ export default function HeroSection() {
             関わるすべてに、次の可能性をひらく。
           </p>
 
-          {/* CTA Buttons - 1.5x size */}
+          {/* CTA Buttons - fully fluid */}
           <div
-            className="fv-btn-wrap"
             style={{
               display: "flex",
-              gap: 20,
+              gap: "clamp(12px, 1.5vw, 20px)",
               flexWrap: "wrap",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -84,11 +83,13 @@ export default function HeroSection() {
           >
             <a
               href="#contact"
-              className="btn-navy fv-btn"
+              className="btn-navy"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
+                padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
+                fontSize: "clamp(13px, 1.48vw, 19px)",
                 color: "white",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
@@ -102,11 +103,13 @@ export default function HeroSection() {
             </a>
             <a
               href="#recruit"
-              className="btn-navy-outline fv-btn"
+              className="btn-navy-outline"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
+                padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
+                fontSize: "clamp(13px, 1.48vw, 19px)",
                 color: "var(--color-navy)",
                 textDecoration: "none",
                 fontFamily: "'Inter', sans-serif",
@@ -145,16 +148,6 @@ export default function HeroSection() {
       </div>
 
       <style>{`
-        .fv-btn {
-          padding: 20px 48px;
-          font-size: 19px;
-        }
-        @media (max-width: 1024px) {
-          .fv-btn {
-            padding: 14px 32px;
-            font-size: 13px;
-          }
-        }
         @keyframes scrollLine {
           0% { transform: scaleY(0); transform-origin: top; }
           50% { transform: scaleY(1); transform-origin: top; }

@@ -33,7 +33,7 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 2px; }
 
-/* SP: center pill buttons */
+/* Pill buttons: center when hamburger menu is active */
 @media (max-width: 1024px) {
   .btn-align-right {
     text-align: center !important;

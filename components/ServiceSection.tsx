@@ -27,17 +27,16 @@ export default function ServiceSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="service" style={{ background: "#f8f9fb", padding: "100px 24px" }}>
+    <section id="service" style={{ background: "#f8f9fb", padding: "clamp(60px, 7.8vw, 100px) clamp(16px, 3vw, 24px)" }}>
       <div ref={ref} style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* Header */}
         <div style={{
           textAlign: "center",
-          marginBottom: 64,
+          marginBottom: "clamp(32px, 5vw, 64px)",
           opacity: inView ? 1 : 0,
           transform: inView ? "translateY(0)" : "translateY(20px)",
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}>
-          {/* SERVICE - 24px at 1280px, Inter Bold, #000000 */}
           <p style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(18px, 1.875vw, 24px)",
@@ -48,7 +47,6 @@ export default function ServiceSection() {
           }}>
             SERVICE
           </p>
-          {/* 事業内容 - 16px at 1280px, #000000 */}
           <h2 style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(12px, 1.25vw, 16px)",
@@ -60,13 +58,13 @@ export default function ServiceSection() {
           </h2>
         </div>
 
-        {/* Service items - images aligned at bottom, single line text */}
+        {/* Service items - auto-fit grid: no breakpoint needed */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 24,
-          marginBottom: 48,
-        }} className="service-grid">
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
+          gap: "clamp(16px, 2vw, 24px)",
+          marginBottom: "clamp(32px, 3.75vw, 48px)",
+        }}>
           {services.map((service, i) => (
             <div
               key={i}
@@ -80,14 +78,14 @@ export default function ServiceSection() {
                 transition: `opacity 0.7s ease ${0.1 + i * 0.1}s, transform 0.7s ease ${0.1 + i * 0.1}s`,
               }}
             >
-              {/* Icon container - fixed height to align bottoms */}
+              {/* Icon container - fluid height */}
               <div style={{
                 width: "100%",
-                height: "clamp(140px, 16.72vw, 214px)",
+                height: "clamp(120px, 16.72vw, 214px)",
                 display: "flex",
                 alignItems: "flex-end",
                 justifyContent: "center",
-                marginBottom: 16,
+                marginBottom: "clamp(8px, 1.25vw, 16px)",
               }}>
                 <Image
                   src={service.icon}
@@ -95,7 +93,7 @@ export default function ServiceSection() {
                   width={190}
                   height={214}
                   style={{
-                    width: "clamp(120px, 14.84vw, 190px)",
+                    width: "clamp(100px, 14.84vw, 190px)",
                     height: "auto",
                     maxHeight: "100%",
                     objectFit: "contain",
@@ -103,10 +101,9 @@ export default function ServiceSection() {
                   }}
                 />
               </div>
-              {/* Title - 16px at 1280px, #000000, single line */}
               <h3 style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(12px, 1.25vw, 16px)",
+                fontSize: "clamp(11px, 1.25vw, 16px)",
                 fontWeight: 700,
                 color: "#000000",
                 letterSpacing: "0.05em",
@@ -119,7 +116,7 @@ export default function ServiceSection() {
           ))}
         </div>
 
-        {/* Detail button - 17px, right-aligned, pill */}
+        {/* Detail button - right-aligned */}
         <div className="btn-align-right" style={{
           textAlign: "right",
           opacity: inView ? 1 : 0,
@@ -132,10 +129,10 @@ export default function ServiceSection() {
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              padding: "12px 36px",
+              padding: "clamp(8px, 1vw, 12px) clamp(24px, 2.8vw, 36px)",
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(13px, 1.33vw, 17px)",
+              fontSize: "clamp(12px, 1.33vw, 17px)",
               letterSpacing: "0.1em",
               textDecoration: "none",
               fontWeight: 700,
@@ -147,14 +144,6 @@ export default function ServiceSection() {
           </a>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 1024px) {
-          .service-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

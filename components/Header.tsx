@@ -70,7 +70,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav - 14px at 1280px */}
-        <nav style={{ display: "flex", gap: 28 }} className="desktop-nav">
+        <nav style={{ display: "flex", gap: "clamp(12px, 2.2vw, 28px)" }} className="desktop-nav">
           {navItems.map((item) => (
             <a
               key={item.label}

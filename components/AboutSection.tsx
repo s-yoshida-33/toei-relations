@@ -25,9 +25,9 @@ export default function AboutSection() {
         position: "relative",
         width: "100%",
         aspectRatio: "1280 / 720",
-        minHeight: 400,
+        minHeight: 360,
       }}>
-        {/* Background image - fills container */}
+        {/* Background image - fixed aspect ratio */}
         <Image
           src="/images/about-bg.png"
           alt="About us"
@@ -45,9 +45,8 @@ export default function AboutSection() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-end",
-          padding: "0 24px 5%",
+          padding: "0 clamp(16px, 3vw, 24px) 5%",
         }}>
-          {/* Description text */}
           <div style={{
             maxWidth: 700,
             textAlign: "center",
@@ -57,11 +56,11 @@ export default function AboutSection() {
           }}>
             <p style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(12px, 1.25vw, 16px)",
+              fontSize: "clamp(10px, 1.25vw, 16px)",
               fontWeight: 700,
               lineHeight: 2,
               color: "#FFFFFF",
-              marginBottom: 32,
+              marginBottom: "clamp(16px, 2.5vw, 32px)",
             }}>
               TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。多彩なマッチングによる両者の持続的に成長できる環境を創出すること、それが私たちのミッションです。
             </p>
@@ -74,12 +73,12 @@ export default function AboutSection() {
                   alignItems: "center",
                   gap: 8,
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "clamp(13px, 1.33vw, 17px)",
+                  fontSize: "clamp(12px, 1.33vw, 17px)",
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   color: "#FFFFFF",
                   textDecoration: "none",
-                  padding: "12px 36px",
+                  padding: "clamp(8px, 1vw, 12px) clamp(24px, 2.8vw, 36px)",
                   borderRadius: 9999,
                   border: "none",
                 }}

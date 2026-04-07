@@ -34,10 +34,10 @@ export default function MissionSection() {
         position: "relative",
         overflow: "hidden",
         aspectRatio: "1280 / 463",
-        minHeight: 400,
+        minHeight: 360,
       }}
     >
-      {/* Background image - fills container */}
+      {/* Background image - fixed aspect ratio */}
       <Image
         src="/images/mission-bg.png"
         alt=""
@@ -63,77 +63,77 @@ export default function MissionSection() {
         <div style={{
           maxWidth: 1100,
           width: "100%",
-          padding: "0 24px",
+          padding: "0 clamp(16px, 3vw, 24px)",
           textAlign: "center",
         }}>
-        {/* Heading */}
-        <h2
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(24px, 3.9vw, 50px)",
-            fontWeight: 700,
-            color: "#FFFFFF",
-            lineHeight: 1.5,
-            marginBottom: 32,
-            opacity: inView ? 1 : 0,
-            transform: inView ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s",
-          }}
-        >
-          つながりを生み出し
-          <br />
-          次へと続く機会をつくる
-        </h2>
-
-        {/* Mission text lines */}
-        <div style={{ marginBottom: 32 }}>
-          {missionText.map((line, i) => (
-            <p
-              key={i}
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(12px, 1.8vw, 24px)",
-                lineHeight: 2,
-                color: "#FFFFFF",
-                fontWeight: 100,
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(15px)",
-                transition: `opacity 0.7s ease ${0.2 + i * 0.08}s, transform 0.7s ease ${0.2 + i * 0.08}s`,
-              }}
-            >
-              {line}
-            </p>
-          ))}
-        </div>
-
-        {/* CTA - right-aligned on PC, center on SP */}
-        <div className="btn-align-right" style={{
-          textAlign: "right",
-          opacity: inView ? 1 : 0,
-          transform: inView ? "translateY(0)" : "translateY(15px)",
-          transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
-        }}>
-          <a
-            href="#about"
-            className="btn-pill-white"
+          {/* Heading - fluid */}
+          <h2
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "12px 36px",
-              color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(13px, 1.33vw, 17px)",
-              letterSpacing: "0.1em",
-              textDecoration: "none",
-              fontWeight: 500,
-              borderRadius: 9999,
-              border: "none",
+              fontSize: "clamp(18px, 3.9vw, 50px)",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              lineHeight: 1.5,
+              marginBottom: "clamp(16px, 2.5vw, 32px)",
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s",
             }}
           >
-            私たちの信念
-          </a>
-        </div>
+            つながりを生み出し
+            <br />
+            次へと続く機会をつくる
+          </h2>
+
+          {/* Mission text lines - fluid */}
+          <div style={{ marginBottom: "clamp(16px, 2.5vw, 32px)" }}>
+            {missionText.map((line, i) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "clamp(10px, 1.6vw, 22px)",
+                  lineHeight: 2,
+                  color: "#FFFFFF",
+                  fontWeight: 100,
+                  opacity: inView ? 1 : 0,
+                  transform: inView ? "translateY(0)" : "translateY(15px)",
+                  transition: `opacity 0.7s ease ${0.2 + i * 0.08}s, transform 0.7s ease ${0.2 + i * 0.08}s`,
+                }}
+              >
+                {line}
+              </p>
+            ))}
+          </div>
+
+          {/* CTA - right-aligned */}
+          <div className="btn-align-right" style={{
+            textAlign: "right",
+            opacity: inView ? 1 : 0,
+            transform: inView ? "translateY(0)" : "translateY(15px)",
+            transition: "opacity 0.7s ease 0.65s, transform 0.7s ease 0.65s",
+          }}>
+            <a
+              href="#about"
+              className="btn-pill-white"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "clamp(8px, 1vw, 12px) clamp(24px, 2.8vw, 36px)",
+                color: "#FFFFFF",
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "clamp(12px, 1.33vw, 17px)",
+                letterSpacing: "0.1em",
+                textDecoration: "none",
+                fontWeight: 500,
+                borderRadius: 9999,
+                border: "none",
+              }}
+            >
+              私たちの信念
+            </a>
+          </div>
         </div>
       </div>
     </section>

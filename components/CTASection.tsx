@@ -23,7 +23,7 @@ export default function CTASection() {
       id="contact"
       style={{
         background: "#003E84",
-        padding: "80px 24px",
+        padding: "clamp(48px, 6.25vw, 80px) clamp(16px, 3vw, 24px)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -38,15 +38,15 @@ export default function CTASection() {
           zIndex: 1,
         }}
       >
-        {/* Heading - 48px at 1280px, #FFFFFF */}
+        {/* Heading - fluid */}
         <h2
           style={{
             fontFamily: "'Inter', sans-serif",
-            fontSize: "clamp(22px, 3.75vw, 48px)",
+            fontSize: "clamp(20px, 3.75vw, 48px)",
             fontWeight: 600,
             color: "#FFFFFF",
             lineHeight: 1.7,
-            marginBottom: 40,
+            marginBottom: "clamp(24px, 3.1vw, 40px)",
             opacity: inView ? 1 : 0,
             transform: inView ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.8s ease, transform 0.8s ease",
@@ -60,7 +60,7 @@ export default function CTASection() {
         <div
           style={{
             display: "flex",
-            gap: 20,
+            gap: "clamp(12px, 1.5vw, 20px)",
             justifyContent: "center",
             flexWrap: "wrap",
             opacity: inView ? 1 : 0,
@@ -68,14 +68,16 @@ export default function CTASection() {
             transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
           }}
         >
-          {/* CONTACT - white bg, #003E84 text → hover: #003E84 bg, white text */}
+          {/* CONTACT - same fluid sizing as FV buttons */}
           <a
             href="#"
-            className="btn-cta-contact fv-btn"
+            className="btn-cta-contact"
             style={{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
+              fontSize: "clamp(13px, 1.48vw, 19px)",
               color: "#003E84",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
@@ -87,14 +89,16 @@ export default function CTASection() {
           >
             CONTACT
           </a>
-          {/* RECRUIT - transparent, white text → hover: white bg, #003E84 text */}
+          {/* RECRUIT */}
           <a
             href="#"
-            className="btn-cta-recruit fv-btn"
+            className="btn-cta-recruit"
             style={{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              padding: "clamp(10px, 1.5vw, 20px) clamp(24px, 3.75vw, 48px)",
+              fontSize: "clamp(13px, 1.48vw, 19px)",
               color: "#FFFFFF",
               textDecoration: "none",
               fontFamily: "'Inter', sans-serif",
