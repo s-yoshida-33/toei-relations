@@ -39,9 +39,9 @@ export default function Header() {
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: 1280,
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 64px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
