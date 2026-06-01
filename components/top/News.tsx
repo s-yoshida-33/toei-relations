@@ -8,41 +8,37 @@ const newsList = [
 
 export default function News() {
   return (
-    <section className="relative w-full py-24 md:py-40 overflow-hidden bg-white mb-20">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 relative">
-        {/* 背景の巨大テキスト */}
-        <h2 className="absolute top-[-30px] md:top-[-70px] left-0 text-[6rem] md:text-[12rem] font-black text-[#8ec899] opacity-80 tracking-tighter leading-none z-0 select-none">
-          NEWS
-        </h2>
+    <section className="relative w-full py-32 bg-white overflow-hidden">
+      {/* 背景の巨大テキスト */}
+      <h2 className="absolute top-10 -left-8 text-[12rem] lg:text-[16rem] font-black text-[#8ec899] tracking-tighter leading-none z-0 pointer-events-none select-none">
+        NEWS
+      </h2>
 
-        {/* コンテンツエリア */}
-        <div className="relative z-10 flex flex-col md:flex-row mt-16 md:mt-32">
-          <div className="w-full md:w-5/12 pr-0 md:pr-12 mb-10 md:mb-0">
-            <ul className="mb-8 border-t border-gray-300">
-              {newsList.map((item, index) => (
-                <li key={index} className="flex flex-col md:flex-row md:items-center py-4 border-b border-gray-300 gap-2 md:gap-6">
-                  <span className="text-sm font-medium text-gray-700 whitespace-nowrap">{item.date}</span>
-                  <a href="#" className="text-sm font-bold text-gray-900 hover:text-[#8ec899] transition-colors line-clamp-1">
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <button className="bg-[#8ec899] text-white text-sm font-bold py-3 px-8 rounded-full hover:bg-[#7ab585] transition-colors">
-              最新のお知らせ
-            </button>
-          </div>
-          
-          <div className="w-full md:w-7/12 relative">
-            <div className="relative h-[250px] md:h-[350px] w-full rounded-2xl overflow-hidden shadow-lg">
-              <Image 
-                src="/images/top/news.jpg" 
-                alt="News" 
-                fill 
-                className="object-cover"
-              />
-            </div>
-          </div>
+      {/* 1280px制限のコンテンツエリア */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 flex items-center justify-between gap-16 mt-20">
+        <div className="w-5/12">
+          <ul className="mb-10 border-t-2 border-gray-800">
+            {newsList.map((item, index) => (
+              <li key={index} className="flex items-center py-5 border-b border-gray-300 gap-6">
+                <span className="text-sm font-medium text-gray-700 whitespace-nowrap">{item.date}</span>
+                <a href="#" className="text-sm font-bold text-gray-900 hover:text-[#8ec899] transition-colors line-clamp-1">
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button className="bg-[#8ec899] text-white text-sm font-bold py-3 px-8 rounded-full hover:bg-[#7ab585] transition-colors">
+            最新のお知らせ
+          </button>
+        </div>
+        
+        <div className="w-7/12 relative h-[350px] rounded-3xl overflow-hidden shadow-lg">
+          <Image 
+            src="/images/top/news.jpg" 
+            alt="News" 
+            fill 
+            className="object-cover"
+          />
         </div>
       </div>
     </section>
