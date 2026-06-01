@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="w-full h-screen flex flex-col justify-center bg-[#f8f9fa]">
+    <section className="w-full h-screen flex flex-col justify-start bg-[#f8f9fa] pt-[140px]">
       <div className="w-full max-w-[1280px] mx-auto px-16">
         <h1 className="text-[#3b5976] text-7xl font-bold leading-tight tracking-wide mb-8">
           Creating new<br />

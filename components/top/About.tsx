@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="relative w-full py-32 bg-white overflow-hidden">
-      <h2 className="absolute top-10 -left-8 text-[16rem] font-black text-[#f58e38] tracking-tighter leading-none z-0 pointer-events-none select-none">
+    <section className="relative w-full pt-16 pb-32 bg-white overflow-hidden">
+      <h2 className="absolute top-0 -left-4 text-[16rem] font-black text-[#f58e38] tracking-tighter leading-none z-0 pointer-events-none select-none">
         ABOUT US
       </h2>
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-16 flex items-center justify-between gap-16 mt-20">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-16 flex items-center justify-between gap-16 mt-52">
         <div className="w-5/12">
           <p className="text-base font-bold text-[#3b5976] leading-relaxed mb-8">
             TOEI RELATIONSは、総合人材サービスを通じて変化し続けるビジネス環境に対応する柔軟なソリューションを提供しています。<br />

@@ -8,12 +8,12 @@ const newsList = [
 
 export default function News() {
   return (
-    <section className="relative w-full py-32 bg-white overflow-hidden">
-      <h2 className="absolute top-10 -left-8 text-[16rem] font-black text-[#8ec899] tracking-tighter leading-none z-0 pointer-events-none select-none">
+    <section className="relative w-full pt-16 pb-32 bg-white overflow-hidden">
+      <h2 className="absolute top-0 -left-4 text-[16rem] font-black text-[#8ec899] tracking-tighter leading-none z-0 pointer-events-none select-none">
         NEWS
       </h2>
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-16 flex items-center justify-between gap-16 mt-20">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-16 flex items-center justify-between gap-16 mt-52">
         <div className="w-5/12">
           <ul className="mb-10 border-t-2 border-gray-800">
             {newsList.map((item, index) => (
